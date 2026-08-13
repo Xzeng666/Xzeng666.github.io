@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Xzeng 的个人项目展示页，聚焦局域网考试、桌面软件与可靠数据链路。">
+  <meta name="theme-color" content="#08111f">
+  <title>Xzeng · 软件项目与产品实践</title>
+  <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/css/site.css">
+  <script defer src="./assets/js/site.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="./" aria-label="返回个人主页">
+        <span class="brand-mark" aria-hidden="true">XZ</span>
+        <span class="brand-text">Xzeng · Project Lab</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false" aria-controls="site-nav">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <nav class="nav-links" id="site-nav" aria-label="主导航">
+        <a href="#about">关于</a>
+        <a href="#projects">项目</a>
+        <a href="#contact">联系</a>
+        <a href="./lanexamsystem/">LanExamSystem</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Software · Product · Reliability</span>
+          <h1>把复杂系统，做成<span class="gradient-text">可靠且易用</span>的产品。</h1>
+          <p class="hero-lead">关注桌面软件、局域网通信、考试业务与数据可靠性。这里展示正在持续打磨的项目，以及它们如何解决真实场景中的问题。</p>
+          <div class="button-row">
+            <a class="button button-primary" href="./lanexamsystem/">
+              查看重点项目
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg>
+            </a>
+            <a class="button button-secondary" href="#contact">联系我</a>
+          </div>
+          <div class="trust-strip" aria-label="关注方向">
+            <div class="trust-item"><strong>LAN</strong><span>局域网优先的稳定通信</span></div>
+            <div class="trust-item"><strong>Desktop</strong><span>面向真实终端环境</span></div>
+            <div class="trust-item"><strong>Traceable</strong><span>可恢复、可校验、可追溯</span></div>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="项目状态概览">
+          <div class="mini-window">
+            <div class="window-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="window-content">
+              <div class="status-line"><div><strong>LanExamSystem</strong><br><small>局域网考试与自动判分</small></div><span class="status-pill">持续迭代</span></div>
+              <div class="status-line"><span>重点方向</span><strong>通信稳定 / 数据恢复</strong></div>
+              <div class="status-line"><span>典型部署</span><strong>100 客户端 + 1 教师机</strong></div>
+              <div class="status-line"><span>当前使用</span><strong style="color: var(--accent-strong)">免费开放</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">How I build</span><h2>从业务链路出发，而不是从功能列表出发。</h2></div>
+          <p>项目设计同时考虑终端性能、网络波动、数据一致性、异常恢复和最终使用体验。</p>
+        </div>
+        <div class="card-grid">
+          <article class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM8 22h8M12 18v4M8 10h8"/></svg></div>
+            <h3>真实环境优先</h3><p>针对机房、旧终端与局域网部署做技术取舍，明确兼容边界和上线前验收要求。</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v5c0 5 3.4 8 8 9 4.6-1 8-4 8-9V7l-8-4Z"/><path d="m9 12 2 2 4-5"/></svg></div>
+            <h3>数据完整优先</h3><p>通过本地持久化、服务端快照、哈希校验和持久队列降低断网、重启与集中提交风险。</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9m5 10V5m5 14v-7m5 7V3"/></svg></div>
+            <h3>验证闭环优先</h3><p>重要链路同步建设自动化测试、自检与现场演练清单，让“能运行”进一步成为“可验收”。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container project-feature">
+        <div class="feature-copy reveal">
+          <span class="eyebrow">Featured project</span>
+          <h2>LanExamSystem</h2>
+          <p>面向高校、培训机构与企业内训的局域网考试系统，覆盖题库、组卷、发布、答题、恢复、交卷、判分、报告与归档。</p>
+          <ul class="check-list">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>客户端即时保存，支持断网、重启后的答案恢复。</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>考生包从类型层隔离标准答案，判分使用服务端快照。</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>教师端集中发布、实时状态、终端管控和成绩报告。</span></li>
+          </ul>
+          <div class="button-row" style="margin-top: 32px">
+            <a class="button button-primary" href="./lanexamsystem/">进入项目专页</a>
+            <a class="button button-secondary" href="https://github.com/Xzeng666/LanExamSystem" target="_blank" rel="noopener noreferrer">查看 GitHub</a>
+          </div>
+        </div>
+        <figure class="visual-frame reveal">
+          <img src="./assets/images/lanexam-server-real.jpg" width="1440" height="785" alt="LanExamSystem 教师管理端实际运行界面截图">
+          <figcaption class="visual-caption">教师管理端实际运行截图 · 控制台与当前考试会话</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section-compact" id="contact">
+      <div class="container">
+        <div class="section-heading reveal"><div><span class="eyebrow">Contact</span><h2>交流项目、部署或合作需求。</h2></div><p>可通过 QQ 或邮箱联系。建议在信息中说明使用场景、终端数量与目标系统环境。</p></div>
+        <div class="contact-grid">
+          <a class="contact-card reveal" href="mailto:zclin1013@126.com">
+            <span class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z"/><path d="m3 7 9 7 9-7"/></svg></span>
+            <span><small>电子邮箱</small><strong>zclin1013@126.com</strong></span>
+          </a>
+          <div class="contact-card reveal">
+            <span class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18c-2 0-3 1-3 3 2 0 4-.5 5-2m8-1c2 0 3 1 3 3-2 0-4-.5-5-2"/><path d="M7 10c0-4 2-7 5-7s5 3 5 7c0 5-2 9-5 9s-5-4-5-9Z"/></svg></span>
+            <span><small>QQ</small><strong>84483278</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid"><span>© <span data-year></span> Xzeng. Built for clarity and reliability.</span><div class="footer-links"><a href="./lanexamsystem/">LanExamSystem</a><a href="https://github.com/Xzeng666" target="_blank" rel="noopener noreferrer">GitHub</a></div></div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xzeng666.github.io/sitemap.xml

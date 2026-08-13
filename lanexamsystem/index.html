@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LanExamSystem：面向高校、机构与企业的局域网考试、自动判分和可恢复答卷系统。当前阶段免费使用。">
+  <meta name="keywords" content="局域网考试系统,机房考试,自动判分,考试客户端,题库,高校考试">
+  <meta name="theme-color" content="#08111f">
+  <meta property="og:title" content="LanExamSystem · 局域网考试与自动判分">
+  <meta property="og:description" content="从题库、发布、考试恢复到判分归档的一体化局域网考试系统。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://xzeng666.github.io/lanexamsystem/">
+  <meta property="og:image" content="https://xzeng666.github.io/assets/images/lanexam-server-real.jpg">
+  <title>LanExamSystem · 局域网考试与自动判分</title>
+  <link rel="canonical" href="https://xzeng666.github.io/lanexamsystem/">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script defer src="../assets/js/site.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="../" aria-label="返回个人主页"><span class="brand-mark" aria-hidden="true">LE</span><span class="brand-text">LanExamSystem</span></a>
+      <button class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <nav class="nav-links" id="site-nav" aria-label="项目导航">
+        <a href="#audience">适用场景</a><a href="#capabilities">核心能力</a><a href="#architecture">架构</a><a href="#deployment">部署</a><a href="#free">免费使用</a><a href="#contact">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="project-hero">
+      <div class="container project-hero-grid">
+        <div>
+          <div class="badge-row"><span class="badge accent">当前阶段免费使用</span><span class="badge">局域网部署</span><span class="badge">Windows 客户端</span><span class="badge">自动判分</span></div>
+          <h1>让每一场机房考试，都有<span class="gradient-text">可恢复的答案</span>与可信的结果。</h1>
+          <p class="hero-lead">LanExamSystem 面向高校、培训机构与企业内训，统一题库、组卷、定向发布、考生作答、异常恢复、集中交卷、自动判分、成绩报告和审计归档。</p>
+          <div class="button-row">
+            <a class="button button-primary" href="#contact">咨询部署</a>
+            <a class="button button-secondary" href="https://github.com/Xzeng666/LanExamSystem" target="_blank" rel="noopener noreferrer">查看源代码</a>
+          </div>
+          <div class="trust-strip" aria-label="项目关键指标">
+            <div class="trust-item"><strong>100 + 1</strong><span>典型机房拓扑设计目标</span></div>
+            <div class="trust-item"><strong>3 类</strong><span>v1 正式题型：单选、多选、判断</span></div>
+            <div class="trust-item"><strong>112</strong><span>当前自动化测试通过</span></div>
+          </div>
+        </div>
+        <figure class="visual-frame reveal">
+          <img src="../assets/images/lanexam-server-real.jpg" width="1440" height="785" alt="LanExamSystem 教师端考试控制台实际运行界面截图">
+          <figcaption class="visual-caption">教师端实际运行界面：考试状态、在线终端、答题进度与判分任务集中查看</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="audience">
+      <div class="container">
+        <div class="section-heading reveal"><div><span class="eyebrow">Built for your environment</span><h2>不同使用方，关注的是同一条可靠链路。</h2></div><p>不是把纸面考试简单搬到电脑上，而是让组织者知道何时可发布、异常时如何恢复、提交后如何确认。</p></div>
+        <div class="persona-grid">
+          <article class="card persona reveal"><span class="persona-tag">高校 / 职业院校</span><h3>标准化机房考试</h3><p>按专业大类和班级定向发布，适配公共机房终端，统一输出成绩与教师视角报告。</p><ul><li>班级与专业筛选</li><li>考生身份确认</li><li>异常暂停与续考</li></ul></article>
+          <article class="card persona reveal"><span class="persona-tag">培训 / 认证机构</span><h3>批次化测评流程</h3><p>从 Excel 或 MySQL 题库导入到组卷、发布、判分和归档，减少重复人工操作。</p><ul><li>题库标准化</li><li>客观题自动判分</li><li>PDF / HTML 成绩单</li></ul></article>
+          <article class="card persona reveal"><span class="persona-tag">企业 / 内部人才发展</span><h3>内网可控的技能评估</h3><p>数据停留在组织局域网内，适合内训考试、岗位基础知识测评和内部竞赛。</p><ul><li>本地化部署</li><li>终端集中管控</li><li>审计与答卷留存</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="capabilities">
+      <div class="container">
+        <div class="section-heading reveal"><div><span class="eyebrow">Core capabilities</span><h2>围绕考试全流程，而不是孤立功能。</h2></div><p>正式链路以服务端时间、不可变快照、稳定 QuestionId / OptionId 和持久化任务为基础。</p></div>
+        <div class="card-grid">
+          <article class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM8 8h8M8 12h8M8 16h5"/></svg></div><h3>题库与组卷</h3><p>Excel、本地 MySQL、云端 MySQL 统一进入标准题库；v1 正式限制单选、多选、判断三类题型。</p></article>
+          <article class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 3v4m10-4v4M5 11h14v9H5z"/></svg></div><h3>定向发布与个人计时</h3><p>按专业大类、班级筛选本场考生，使用服务端时间控制登录窗口与个人考试时长。</p></article>
+          <article class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></div><h3>轻量实时监考</h3><p>答题进度以随机轻量心跳更新，教师端查看 IP、在线状态、计时状态和最后同步时间。</p></article>
+          <article class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V5h14v14zM8 15l3-3 2 2 3-4"/></svg></div><h3>断网与重启恢复</h3><p>单题作答即时写入本地 SQLite；服务端检查点用于换机恢复，旧快照不会覆盖本地较新答案。</p></article>
+          <article class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v5c0 5 3.4 8 8 9 4.6-1 8-4 8-9V7l-8-4Z"/><path d="m9 12 2 2 4-5"/></svg></div><h3>答案安全隔离</h3><p>考生 DTO 与 candidate-v1 包从类型层不包含正确答案和判分规则，标准答案只在服务端快照中使用。</p></article>
+          <article class="card reveal"><div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6zM14 3v4h4M9 12h6M9 16h6"/></svg></div><h3>判分、报告与归档</h3><p>答卷进入持久化判分队列，教师端查看成绩并导出 PDF / HTML 报告，保留哈希与审计信息。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="container project-feature reverse">
+        <div class="feature-copy reveal">
+          <span class="eyebrow">Recovery by design</span><h2>考生机重启，不应该意味着从零开始。</h2>
+          <p>系统把“恢复”放进正式考试链路：答案每次变化立即持久化，登录凭据则不跨重启保存。考生重新开机后必须手动登录，认证通过后再合并恢复数据。</p>
+          <ul class="check-list">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>账号与密码每次冷启动保持空白，不自动登录。</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>本地单题快照优先，服务端只补齐缺失数据。</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>教师机持久队列可在服务重启后继续处理待判分任务。</span></li>
+          </ul>
+        </div>
+        <figure class="visual-frame reveal">
+          <img src="../assets/images/lanexam-client-real.jpg" width="1440" height="810" alt="LanExamSystem 考生端登录页面实际运行界面截图" loading="lazy">
+          <figcaption class="visual-caption">考生端实际运行界面：每次冷启动均要求手动输入考号与密码</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="architecture">
+      <div class="container">
+        <div class="section-heading reveal"><div><span class="eyebrow">Architecture</span><h2>客户端无答案，服务端保留判分真相。</h2></div><p>题库定义经过组卷与发布形成不可变 AttemptSnapshot，再分别映射到考生视图和服务端判分快照。</p></div>
+        <figure class="architecture-wrap reveal">
+          <img src="../assets/images/lanexam-architecture.svg" width="1500" height="820" alt="LanExamSystem 从题库导入、标准化、组卷、考试快照、客户端作答到服务端判分的系统架构图">
+          <figcaption class="visual-caption">架构图根据当前 Solution 项目引用、题库 v1 规范与提交判分链路绘制</figcaption>
+        </figure>
+        <div class="metric-grid" style="margin-top: 20px">
+          <div class="metric reveal"><strong>25–55 秒</strong><span>随机轻量进度心跳</span></div>
+          <div class="metric reveal"><strong>3–5 分钟</strong><span>完整答案检查点节奏</span></div>
+          <div class="metric reveal"><strong>90 秒</strong><span>认证通信离线阈值</span></div>
+          <div class="metric reveal"><strong>OptionId</strong><span>乱序后仍稳定的判分键</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="container">
+        <div class="section-heading reveal"><div><span class="eyebrow">End-to-end flow</span><h2>从题库到归档，一条链路完成。</h2></div></div>
+        <div class="flow">
+          <div class="flow-step reveal"><span>01 · PREPARE</span><strong>导入与组卷</strong><p>统一题型、答案和 OptionId，生成试卷关系。</p></div>
+          <div class="flow-step reveal"><span>02 · RELEASE</span><strong>发布与筛选</strong><p>设置登录时间、考试时长、专业与班级范围。</p></div>
+          <div class="flow-step reveal"><span>03 · ATTEMPT</span><strong>快照与作答</strong><p>服务端冻结试题快照，客户端即时保存答案。</p></div>
+          <div class="flow-step reveal"><span>04 · SUBMIT</span><strong>交卷与队列</strong><p>答卷校验、上传受理，进入持久化判分队列。</p></div>
+          <div class="flow-step reveal"><span>05 · REPORT</span><strong>成绩与归档</strong><p>教师端查看结果，导出报告并保留审计证据。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="deployment">
+      <div class="container">
+        <div class="section-heading reveal"><div><span class="eyebrow">Deployment facts</span><h2>部署要求透明，避免上线前才发现边界。</h2></div><p>以下要求来自当前代码目标框架和项目文档，不用宣传口径替代真实兼容性。</p></div>
+        <div class="comparison reveal">
+          <table>
+            <thead><tr><th scope="col">组件</th><th scope="col">当前环境要求</th><th scope="col">在考试中的职责</th></tr></thead>
+            <tbody>
+              <tr><td>考生客户端</td><td>Windows 7 SP1 / 10 / 11，.NET Framework 4.8，x86</td><td>登录、答题、本地保存、心跳、检查点、交卷与考试环境控制</td></tr>
+              <tr><td>教师端 / 服务端</td><td>64 位 Windows 10 22H2 / 11 / Windows Server 2019+；建议自包含发布</td><td>考试发布、服务端计时、快照、答卷受理、判分队列、报告与终端管控</td></tr>
+              <tr><td>数据服务</td><td>MySQL 8.x，建议 utf8mb4；考生端本地 SQLite</td><td>题库、考试记录、快照、任务、审计与本地答案持久化</td></tr>
+              <tr><td>典型网络</td><td>同一可靠局域网，目标场景 100 台考生机 + 1 台教师机</td><td>TCP 指令/心跳、HTTP 包分发与上传、UDP 自动发现</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="notice reveal" style="margin-top: 20px"><strong>上线边界：</strong>自动化测试不能替代真实机房验收。正式考试前应在目标交换机、数据库和终端镜像上完成集中登录、断网、断电/重启、换机、集中交卷与升级演练。教师端当前不能运行在 Windows 7 SP1。</div>
+      </div>
+    </section>
+
+    <section class="section-compact" id="free">
+      <div class="container">
+        <div class="free-banner reveal">
+          <div class="free-banner-content">
+            <div><span class="free-label">CURRENT · FREE TO USE</span><h2>现阶段免费使用。</h2><p>当前阶段面向教学试点、机构内部评估和企业内训体验免费开放。你可以查看公开仓库并联系获取部署交流；具体部署支持、定制范围和后续服务安排以沟通确认为准。</p></div>
+            <a class="button button-primary" href="https://github.com/Xzeng666/LanExamSystem" target="_blank" rel="noopener noreferrer">访问 GitHub 仓库</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-heading reveal"><div><span class="eyebrow">Talk about deployment</span><h2>把你的考场条件告诉我。</h2></div><p>联系时建议提供使用单位类型、考生机数量、终端操作系统、网络结构、考试题型和预计使用时间。</p></div>
+        <div class="contact-grid">
+          <a class="contact-card reveal" href="mailto:zclin1013@126.com?subject=LanExamSystem%20部署咨询"><span class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v12H3z"/><path d="m3 7 9 7 9-7"/></svg></span><span><small>邮箱 · 推荐用于完整需求</small><strong>zclin1013@126.com</strong></span></a>
+          <div class="contact-card reveal"><span class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18c-2 0-3 1-3 3 2 0 4-.5 5-2m8-1c2 0 3 1 3 3-2 0-4-.5-5-2"/><path d="M7 10c0-4 2-7 5-7s5 3 5 7c0 5-2 9-5 9s-5-4-5-9Z"/></svg></span><span><small>QQ · 快速沟通</small><strong>84483278</strong></span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-grid"><span>© <span data-year></span> LanExamSystem · 局域网考试与自动判分</span><div class="footer-links"><a href="../">个人主页</a><a href="https://github.com/Xzeng666/LanExamSystem" target="_blank" rel="noopener noreferrer">GitHub</a><a href="mailto:zclin1013@126.com">联系</a></div></div></footer>
+</body>
+</html>

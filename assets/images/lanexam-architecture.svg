@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="820" viewBox="0 0 1500 820" role="img" aria-labelledby="title desc">
+  <title id="title">LanExamSystem 全流程架构</title><desc id="desc">题库导入、标准化、组卷、考试发布、考生快照、客户端作答和服务端判分归档的数据流</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0d1829"/><stop offset="1" stop-color="#07101c"/></linearGradient>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#244f8f"/><stop offset="1" stop-color="#17355f"/></linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#116149"/><stop offset="1" stop-color="#0c3d30"/></linearGradient>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8Z" fill="#79a7ff"/></marker>
+    <style>.t{font-family:Segoe UI,Microsoft YaHei,sans-serif}.h{fill:#f8fafc;font-size:17px;font-weight:700}.s{fill:#8fa3bd;font-size:12px}.k{fill:#dbe8ff;font-size:13px;font-weight:600}.line{fill:none;stroke:#79a7ff;stroke-width:2;marker-end:url(#arrow)}.dash{fill:none;stroke:#526983;stroke-width:1.5;stroke-dasharray:6 7;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1500" height="820" rx="30" fill="url(#bg)"/>
+  <circle cx="1320" cy="80" r="300" fill="#366ed0" opacity=".06"/><circle cx="110" cy="760" r="260" fill="#22c98b" opacity=".045"/>
+  <text x="56" y="58" class="t h" font-size="24">LanExamSystem · 正式考试数据链路</text><text x="56" y="84" class="t s">导入边界统一标准化；考生视图与服务端判分快照从模型层隔离</text>
+
+  <g transform="translate(48 126)">
+    <rect width="238" height="214" rx="20" fill="#111f34" stroke="#30445f"/>
+    <text x="22" y="34" class="t s" letter-spacing="2">DATA SOURCES</text><text x="22" y="68" class="t h">题目数据入口</text>
+    <rect x="20" y="88" width="198" height="30" rx="8" fill="#162a45"/><text x="34" y="108" class="t k">Excel 题库模板</text>
+    <rect x="20" y="128" width="198" height="30" rx="8" fill="#162a45"/><text x="34" y="148" class="t k">本地 / 云端 MySQL</text>
+    <rect x="20" y="168" width="198" height="30" rx="8" fill="#162a45"/><text x="34" y="188" class="t k">Legacy DB 适配器</text>
+  </g>
+  <path d="M286 232h60" class="line"/>
+  <g transform="translate(348 126)">
+    <rect width="260" height="214" rx="20" fill="url(#b)" stroke="#4777b8"/>
+    <text x="22" y="34" class="t s" fill="#a9c7ff" letter-spacing="2">CANONICALIZE</text><text x="22" y="68" class="t h">标准化与校验</text>
+    <text x="22" y="106" class="t k">QuestionTypeCodec</text><text x="22" y="134" class="t k">Answer / Difficulty Normalizer</text><text x="22" y="162" class="t k">Stable QuestionId / OptionId</text><text x="22" y="190" class="t k">QuestionDefinitionValidator</text>
+  </g>
+  <path d="M608 232h60" class="line"/>
+  <g transform="translate(670 126)">
+    <rect width="250" height="214" rx="20" fill="#111f34" stroke="#30445f"/>
+    <text x="22" y="34" class="t s" letter-spacing="2">SOURCE OF TRUTH</text><text x="22" y="68" class="t h">Canonical Question Bank</text>
+    <text x="22" y="106" class="t k">qb_questions</text><text x="22" y="134" class="t k">qb_question_options</text><text x="22" y="162" class="t k">qb_question_answers</text><text x="22" y="190" class="t k">qb_papers / paper_questions</text>
+  </g>
+  <path d="M920 232h60" class="line"/>
+  <g transform="translate(982 126)">
+    <rect width="250" height="214" rx="20" fill="#111f34" stroke="#30445f"/>
+    <text x="22" y="34" class="t s" letter-spacing="2">PAPER</text><text x="22" y="68" class="t h">Blueprint + PaperQuestion</text>
+    <text x="22" y="108" class="t k">题型 / 数量 / 难度 / 标签</text><text x="22" y="138" class="t k">DisplayOrder</text><text x="22" y="168" class="t k">AssignedScore</text><text x="22" y="198" class="t s">不修改原始题库定义</text>
+  </g>
+  <path d="M1232 232h60" class="line"/>
+  <g transform="translate(1294 126)">
+    <rect width="158" height="214" rx="20" fill="url(#g)" stroke="#268568"/>
+    <text x="18" y="34" class="t s" fill="#8be8c4" letter-spacing="2">RELEASE</text><text x="18" y="68" class="t h">考试发布</text><text x="18" y="108" class="t k">范围筛选</text><text x="18" y="138" class="t k">服务端时间</text><text x="18" y="168" class="t k">题型白名单</text><text x="18" y="198" class="t k">生成快照</text>
+  </g>
+
+  <path d="M1373 340v74H750v54" class="line"/>
+  <g transform="translate(582 470)">
+    <rect width="336" height="142" rx="22" fill="#14243a" stroke="#4777b8"/>
+    <text x="24" y="36" class="t s" fill="#a9c7ff" letter-spacing="2">IMMUTABLE</text><text x="24" y="70" class="t h">AttemptSnapshot</text>
+    <text x="24" y="103" class="t k">题干 / 题型 / 分值 / 显示顺序</text><text x="24" y="128" class="t s">OptionId + Content + DisplayLabel</text>
+  </g>
+
+  <path d="M582 541H432v79" class="line"/>
+  <path d="M918 541h150v79" class="line"/>
+
+  <g transform="translate(116 622)">
+    <rect width="480" height="150" rx="22" fill="#102b27" stroke="#24775e"/>
+    <text x="24" y="36" class="t s" fill="#8be8c4" letter-spacing="2">CANDIDATE PATH · 无答案</text><text x="24" y="70" class="t h">Candidate DTO → Client → Answer</text>
+    <text x="24" y="103" class="t k">QuestionId / Content / Options / DisplayLabel</text><text x="24" y="130" class="t s">本地 SQLite 即时保存 · 心跳 · 检查点 · 提交包</text>
+  </g>
+  <g transform="translate(904 622)">
+    <rect width="480" height="150" rx="22" fill="#172846" stroke="#4777b8"/>
+    <text x="24" y="36" class="t s" fill="#a9c7ff" letter-spacing="2">SERVER PATH · 有答案</text><text x="24" y="70" class="t h">GradingSnapshot → AutoGrader</text>
+    <text x="24" y="103" class="t k">CorrectOptionIds + Score + RuleVersion</text><text x="24" y="130" class="t s">持久队列 → QuestionResults → Report → Archive</text>
+  </g>
+  <path d="M596 697h308" class="dash"/>
+  <rect x="655" y="676" width="190" height="42" rx="21" fill="#0d1829" stroke="#30445f"/><text x="750" y="702" text-anchor="middle" class="t k">SelectedOptionIds 提交</text>
+  <text x="750" y="798" text-anchor="middle" class="t s">客户端永远拿不到 CorrectAnswer · 服务端按稳定 OptionId 比较答案集合</text>
+</svg>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="川渝智能导航方言 ASR Case Study：离线稳健推理、异常重试、模型回退与质量门禁。">
+  <meta name="theme-color" content="#08111f">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="川渝智能导航方言 ASR · Clin">
+  <meta property="og:description" content="面向导航语音的离线识别、可恢复分片、异常处理与可审计输出流水线。">
+  <meta property="og:url" content="https://xzeng666.github.io/projects/dialect-asr/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="川渝智能导航方言 ASR · Clin">
+  <meta name="twitter:description" content="面向导航语音的离线识别、可恢复分片、异常处理与可审计输出流水线。">
+  <title>川渝智能导航方言 ASR · Clin</title>
+  <link rel="canonical" href="https://xzeng666.github.io/projects/dialect-asr/">
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <link rel="stylesheet" href="../../assets/css/themes.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script defer src="../../assets/js/site.js"></script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"CreativeWork","name":"川渝智能导航方言 ASR","url":"https://xzeng666.github.io/projects/dialect-asr/","author":{"@type":"Person","name":"Clin","url":"https://xzeng666.github.io/"},"description":"面向川渝导航语音的离线稳健识别、异常重试、模型回退和质量门禁流水线。"}
+  </script>
+</head>
+<body class="project-theme theme-asr">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header"><div class="container nav-shell"><a class="brand" href="../../" aria-label="返回个人主页"><span class="brand-mark" aria-hidden="true">ASR</span><span class="brand-text">Dialect ASR</span></a><button class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><nav class="nav-links" id="site-nav" aria-label="项目导航"><a href="#overview">概览</a><a href="#architecture">架构</a><a href="#decisions">技术决策</a><a href="#results">结果</a><a href="#screenshots">图片</a><a href="../">全部项目</a></nav></div></header>
+
+  <main id="main">
+    <section class="project-hero case-hero"><div class="container case-hero-grid"><div><div class="badge-row"><span class="badge accent">AI · ASR</span><span class="badge">Python</span><span class="badge">Whisper</span><span class="badge">Offline</span></div><h1>让离线语音识别在异常时可恢复、可回退、可审计。</h1><p class="hero-lead">项目面向川渝导航语音，当前路线冻结为 Whisper-small 稳健推理：正常样本一次解码，异常结果受约束重试，仍失败时回退旧模型，再经过确定性规范化与质量门禁生成结果。</p><div class="button-row"><a class="button button-primary" href="#architecture">查看推理链路</a><a class="button button-secondary" href="../">返回项目列表</a></div></div><aside class="case-hero-aside" aria-label="项目事实"><span>PROJECT FACTS</span><dl><div><dt>运行</dt><dd>本机离线</dd></div><div><dt>主模型</dt><dd>Whisper-small v2</dd></div><div><dt>回退</dt><dd>旧 Whisper 模型</dd></div><div><dt>输出</dt><dd>JSONL + 审计记录</dd></div></dl></aside></div></section>
+
+    <section class="section section-muted" id="overview"><div class="container case-copy-grid"><article class="case-copy reveal"><span class="eyebrow">Overview & context</span><h2>无参考文本的测试集，更需要约束“看起来合理”的冲动。</h2><p>导航方言识别不仅要处理口音和地名，还要避免生成循环、整句重复、异常长度和异常字符。测试集缺少真值时，人工把文本改得更通顺并不能证明 CER 更低。</p><h3>Problem</h3><p>批量推理可能因 CUDA 进程退出丢失长时间进度；单一解码策略对异常样本不够稳健；同时不能让重试、后处理或地名规则变成不可追踪的黑箱。</p></article><aside class="case-aside"><div class="case-note reveal"><span>CORE RULE</span><strong>正常样本不做额外改写</strong><p>只对质量门禁识别出的异常结果启动受约束重试。</p></div><div class="case-note reveal"><span>NO CLAIM</span><strong>不在无真值测试集上声称 CER</strong><p>质量门禁只能排除明显生成故障，不能代替正式评测。</p></div></aside></div></section>
+
+    <section class="section"><div class="container"><div class="section-heading reveal"><div><span class="eyebrow">Requirements</span><h2>推理结果必须同时满足格式、质量和可追溯性。</h2></div></div><div class="card-grid"><article class="card reveal"><h3>异常可识别</h3><p>检测单字死循环、短语循环、整句重复、异常长度与异常字符速率。</p></article><article class="card reveal"><h3>运行可恢复</h3><p>固定分片计划，完成一个分片立即保存；恢复时跳过已通过校验的分片。</p></article><article class="card reveal"><h3>输出可审计</h3><p>分别记录重试、模型回退、文本规则、质量失败与最终构建校验。</p></article></div></div></section>
+
+    <section class="section section-muted" id="architecture"><div class="container"><div class="section-heading reveal"><div><span class="eyebrow">Architecture</span><h2>把稳健性放进正式推理链路。</h2></div><p>每一步都有明确输入、失败路径和持久化证据。</p></div><div class="flow"><div class="flow-step reveal"><span>01 · SHARD</span><strong>固定分片</strong><p>测试音频按计划拆分，支持断点恢复。</p></div><div class="flow-step reveal"><span>02 · INFER</span><strong>主模型识别</strong><p>正常样本使用一次贪心解码。</p></div><div class="flow-step reveal"><span>03 · GUARD</span><strong>异常检测</strong><p>识别重复、长度和字符异常。</p></div><div class="flow-step reveal"><span>04 · RETRY</span><strong>重试 / 回退</strong><p>受约束重试，必要时加载旧模型。</p></div><div class="flow-step reveal"><span>05 · BUILD</span><strong>规范化与校验</strong><p>生成 JSONL、审计与 SHA-256。</p></div></div></div></section>
+
+    <section class="section" id="decisions"><div class="container"><div class="section-heading reveal"><div><span class="eyebrow">Technical decisions</span><h2>控制变量，比盲目增加模型更重要。</h2></div></div><div class="decision-grid"><article class="decision-card reveal"><span>01</span><h3>冻结模型路线</h3><p>当前不再继续训练，避免测试集输出反向影响模型或规则。</p></article><article class="decision-card reveal"><span>02</span><h3>按需加载回退模型</h3><p>只有重试仍异常时才加载旧 Whisper，避免两个模型长期占用显存。</p></article><article class="decision-card reveal"><span>03</span><h3>确定性后处理</h3><p>safe 档只处理导航、叫车、车型和常见术语；实验性地名规则保持独立。</p></article><article class="decision-card reveal"><span>04</span><h3>构建阶段再验证</h3><p>最终输出重新检查 UTF-8、JSONL、ID 对应、字段集合和明显生成异常。</p></article></div></div></section>
+
+    <section class="section section-muted"><div class="container"><div class="section-heading reveal"><div><span class="eyebrow">Challenges & solutions</span><h2>失败路径也必须是工程流程的一部分。</h2></div></div><div class="comparison reveal"><table><thead><tr><th scope="col">挑战</th><th scope="col">解决方式</th><th scope="col">留下的证据</th></tr></thead><tbody><tr><td>生成循环与整句重复</td><td>动态长度上限、beam search、no-repeat n-gram 与重复惩罚重试</td><td>robust-audit.jsonl</td></tr><tr><td>GPU 任务意外退出</td><td>分片子进程、自动降为 batch size 1、有限次数重试与 Resume</td><td>plan.json + 分片 predictions</td></tr><tr><td>后处理误改风险</td><td>safe / extended 候选隔离，规则逐条记录，不人工挑句</td><td>correction-audit.jsonl</td></tr></tbody></table></div></div></section>
+
+    <section class="section" id="results"><div class="container"><div class="section-heading reveal"><div><span class="eyebrow">Results</span><h2>当前结果证明的是稳健性链路，不是未经验证的准确率。</h2></div></div><div class="case-result-grid"><div class="case-result reveal"><strong>5 条异常诊断</strong><span>当前 README 记录的严重异常均经过真实 GPU 诊断</span></div><div class="case-result reveal"><strong>4 + 1</strong><span>4 条由受约束重试恢复，1 条交给旧模型回退</span></div><div class="case-result reveal"><strong>可恢复分片</strong><span>成功分片即时保存，中断后不重做已校验工作</span></div></div><div class="project-boundary reveal spaced-top"><strong>准确率边界：</strong>项目没有在无标注测试集上公布 CER，也不会把“读起来更通顺”当作准确率证据；最终效果仍需正式评测验证。</div></div></section>
+
+    <section class="section section-muted" id="screenshots"><div class="container"><div class="section-heading reveal"><div><span class="eyebrow">Screenshots & evidence</span><h2>为架构、审计与结果准备多图展示位。</h2></div><p>占位图仅说明建议素材类型，不代表识别结果或性能。</p></div><div class="media-carousel reveal" data-carousel aria-label="方言 ASR 项目图片轮换"><div class="carousel-viewport"><figure class="carousel-slide" data-carousel-slide><img src="../../assets/images/project-image-placeholder.svg" width="1440" height="810" loading="lazy" decoding="async" alt="待补：方言 ASR 稳健推理架构图"><figcaption>图片 1 · 分片、主模型、异常门禁、重试与回退架构</figcaption></figure><figure class="carousel-slide" data-carousel-slide><img src="../../assets/images/project-image-placeholder.svg" width="1440" height="810" loading="lazy" decoding="async" alt="待补：方言 ASR 审计文件或质量门禁输出截图"><figcaption>图片 2 · robust audit、quality failures 或校验终端输出</figcaption></figure><figure class="carousel-slide" data-carousel-slide><img src="../../assets/images/project-image-placeholder.svg" width="1440" height="810" loading="lazy" decoding="async" alt="待补：方言 ASR 分片恢复与最终构建结果截图"><figcaption>图片 3 · Resume 分片恢复与最终 READY / SHA-256 证据</figcaption></figure></div><div class="carousel-controls"><button class="carousel-button" type="button" data-carousel-prev aria-label="上一张方言 ASR 图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><div class="carousel-position"><div class="carousel-dots" aria-label="选择方言 ASR 图片"><button class="carousel-dot" type="button" data-carousel-dot aria-label="查看第 1 张图片" aria-current="true"></button><button class="carousel-dot" type="button" data-carousel-dot aria-label="查看第 2 张图片" aria-current="false"></button><button class="carousel-dot" type="button" data-carousel-dot aria-label="查看第 3 张图片" aria-current="false"></button></div><span class="carousel-status" data-carousel-status aria-live="polite">1 / 3</span></div><button class="carousel-button" type="button" data-carousel-next aria-label="下一张方言 ASR 图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div><p class="carousel-help">可使用按钮、分页圆点或键盘左右方向键切换。</p></div></div></section>
+
+    <section class="section-compact"><div class="container"><div class="free-banner reveal"><div class="free-banner-content"><div><span class="free-label">PROJECT BOUNDARY</span><h2>代码仓库暂未公开。</h2><p>当前页面只展示已从本地项目 README 和代码结构核验的工程事实；公开仓库或下载入口需要本人确认后再启用。</p></div><a class="button button-primary" href="mailto:zclin1013@126.com?subject=Dialect%20ASR%20项目交流">交流项目</a></div></div></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-grid"><span>© <span data-year></span> Dialect ASR · Clin</span><div class="footer-links"><a href="../../">个人主页</a><a href="../">全部项目</a><a href="mailto:zclin1013@126.com">联系</a></div></div></footer>
+</body>
+</html>

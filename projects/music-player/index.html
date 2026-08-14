@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Resonance Music Case Study：Flutter 跨平台、本地优先并提供可解释推荐的音乐播放器。">
+  <meta name="theme-color" content="#08111f">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Resonance Music · Clin">
+  <meta property="og:description" content="从跨平台播放、合规音源到设备端可解释推荐的完整工程实践。">
+  <meta property="og:url" content="https://xzeng666.github.io/projects/music-player/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Resonance Music · Clin">
+  <meta name="twitter:description" content="从跨平台播放、合规音源到设备端可解释推荐的完整工程实践。">
+  <title>Resonance Music · Clin</title>
+  <link rel="canonical" href="https://xzeng666.github.io/projects/music-player/">
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <link rel="stylesheet" href="../../assets/css/themes.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script defer src="../../assets/js/site.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Resonance Music",
+    "url": "https://xzeng666.github.io/projects/music-player/",
+    "codeRepository": "https://github.com/Xzeng666/Music-player",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Windows, Ubuntu, iOS, Android",
+    "author": { "@type": "Person", "name": "Clin", "url": "https://xzeng666.github.io/" },
+    "description": "使用 Flutter 构建的本地优先跨平台音乐播放器，包含合规在线音源和可解释推荐。"
+  }
+  </script>
+</head>
+<body class="project-theme theme-music">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header"><div class="container nav-shell"><a class="brand" href="../../" aria-label="返回个人主页"><span class="brand-mark" aria-hidden="true">RM</span><span class="brand-text">Resonance Music</span></a><button class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false" aria-controls="site-nav"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><nav class="nav-links" id="site-nav" aria-label="项目导航"><a href="#overview">概览</a><a href="#architecture">架构</a><a href="#decisions">技术决策</a><a href="#results">结果</a><a href="#screenshots">图片</a><a href="../">全部项目</a></nav></div></header>
+
+  <main id="main">
+    <section class="project-hero case-hero">
+      <div class="container case-hero-grid">
+        <div><div class="badge-row"><span class="badge accent">Software · AI</span><span class="badge">Flutter</span><span class="badge">Local-first</span><span class="badge">Explainable</span></div><h1>让音乐播放器理解偏好，但不拿走用户的数据。</h1><p class="hero-lead">Resonance Music 是从旧 Qt Widgets 播放器整体重构而来的 Flutter 跨平台应用，覆盖本地音乐、合规在线试听、授权下载、设备端行为记录与可解释推荐。</p><div class="button-row"><a class="button button-primary" href="https://github.com/Xzeng666/Music-player" target="_blank" rel="noopener noreferrer">查看源代码</a><a class="button button-secondary" href="../">返回项目列表</a></div></div>
+        <aside class="case-hero-aside" aria-label="项目事实"><span>PROJECT FACTS</span><dl><div><dt>平台</dt><dd>Windows · Ubuntu · iOS · Android</dd></div><div><dt>技术</dt><dd>Flutter · Dart</dd></div><div><dt>数据</dt><dd>设备端本地优先</dd></div><div><dt>推荐</dt><dd>多标签 · 阈值 · 衰减</dd></div></dl></aside>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="overview"><div class="container case-copy-grid"><article class="case-copy reveal"><span class="eyebrow">Overview & context</span><h2>播放体验、版权边界和个性化需要一起设计。</h2><p>项目需要同时面对桌面与移动端布局、本地文件与在线来源、播放状态持久化、试听与下载许可，以及冷启动阶段推荐数据不足等问题。</p><h3>Problem</h3><p>传统单窗口播放器难以适配多平台；简单“猜你喜欢”又常依赖账号和云端画像，推荐原因不可见。在线音乐来源还必须明确试听、缓存与永久下载的许可边界。</p></article><aside class="case-aside"><div class="case-note reveal"><span>PRODUCT GOAL</span><strong>一个无需账号也能逐步理解偏好的播放器</strong><p>收藏、历史、路径与偏好默认只保存在设备上。</p></div><div class="case-note reveal"><span>CONTENT BOUNDARY</span><strong>音源能力服从许可边界</strong><p>iTunes 只播放试听，Internet Archive 仅对开放许可内容提供下载。</p></div></aside></div></section>
+
+    <section class="section"><div class="container"><div class="section-heading reveal"><div><span class="eyebrow">Requirements</span><h2>核心要求不是“功能多”，而是跨平台后仍保持可理解。</h2></div></div><div class="card-grid"><article class="card reveal"><h3>自适应界面</h3><p>手机使用底部导航，桌面使用侧边导航，覆盖窄屏、横屏、平板与桌面宽度。</p></article><article class="card reveal"><h3>统一播放链路</h3><p>本地文件、iTunes Preview 与 Internet Archive 共享播放控制、进度、循环和音量状态。</p></article><article class="card reveal"><h3>可解释推荐</h3><p>行为达到明确阈值后才启用个性化，并向用户展示贡献最大的偏好标签。</p></article></div></div></section>
+
+    <section class="section section-muted" id="architecture"><div class="container"><div class="section-heading reveal"><div><span class="eyebrow">Architecture</span><h2>界面、用例、领域模型与数据来源分层。</h2></div><p>播放、媒体来源和推荐逻辑由端口隔离，便于跨平台测试与替换实现。</p></div><div class="flow"><div class="flow-step reveal"><span>01 · UI</span><strong>Adaptive Shell</strong><p>页面、导航、主题与播放器组件。</p></div><div class="flow-step reveal"><span>02 · APP</span><strong>AppController</strong><p>协调搜索、播放、收藏与推荐用例。</p></div><div class="flow-step reveal"><span>03 · DOMAIN</span><strong>Song & Behavior</strong><p>歌曲标签、事件、偏好向量与排序规则。</p></div><div class="flow-step reveal"><span>04 · DATA</span><strong>Sources</strong><p>本地文件、公开搜索与授权媒体适配器。</p></div><div class="flow-step reveal"><span>05 · DEVICE</span><strong>Persistence</strong><p>收藏、历史、缓存与设备端偏好。</p></div></div></div></section>
+
+    <section class="section" id="decisions"><div class="container"><div class="section-heading reveal"><div><span class="eyebrow">Technical decisions</span><h2>关键决策围绕隐私、许可和推荐可解释性。</h2></div></div><div class="decision-grid"><article class="decision-card reveal"><span>01</span><h3>Flutter 重构</h3><p>用单一界面层覆盖四个平台，同时保留平台相关文件选择、存储和播放能力。</p></article><article class="decision-card reveal"><span>02</span><h3>来源适配器</h3><p>歌曲海只解析公开元数据；实际播放严格匹配 iTunes Preview 或 Internet Archive。</p></article><article class="decision-card reveal"><span>03</span><h3>阈值后个性化</h3><p>至少 8 个有效行为且置信度达到 6.0 后才启用个性化，避免少量点击过早定型。</p></article><article class="decision-card reveal"><span>04</span><h3>时间衰减</h3><p>行为按 45 天半衰期衰减，并加入新鲜度、重复惩罚和艺术家多样性。</p></article></div></div></section>
+
+    <section class="section section-muted"><div class="container"><div class="section-heading reveal"><div><span class="eyebrow">Challenges & solutions</span><h2>跨平台并不只是“能编译”。</h2></div></div><div class="comparison reveal"><table><thead><tr><th scope="col">挑战</th><th scope="col">解决方式</th><th scope="col">验证重点</th></tr></thead><tbody><tr><td>宽度与输入方式差异</td><td>自适应壳层、44×44 最小触控目标、键盘焦点与读屏语义</td><td>375–1440+、横竖屏、系统字体与 reduced motion</td></tr><tr><td>在线来源许可不一致</td><td>元数据搜索与媒体播放解耦，永久下载仅限开放许可证</td><td>来源标识、播放匹配与下载条件</td></tr><tr><td>推荐冷启动与偏见</td><td>阈值前使用新鲜度和多样性，阈值后再使用标签偏好</td><td>重置、重复惩罚与推荐原因可读性</td></tr></tbody></table></div></div></section>
+
+    <section class="section" id="results"><div class="container"><div class="section-heading reveal"><div><span class="eyebrow">Results</span><h2>仓库已经形成可运行、可测试的跨平台主链路。</h2></div></div><div class="case-result-grid"><div class="case-result reveal"><strong>4 平台</strong><span>Windows、Ubuntu、iOS 与 Android 构建目标</span></div><div class="case-result reveal"><strong>17 项测试</strong><span>当前 README 记录的 Windows 验收测试全部通过</span></div><div class="case-result reveal"><strong>本地优先</strong><span>行为、偏好、收藏与路径默认不上传</span></div></div><div class="project-boundary reveal spaced-top"><strong>当前边界：</strong>iTunes 仅提供约 30 秒试听；Internet Archive 元数据质量不一致；后台播放、跨设备同步和批量下载队列尚未纳入当前验收范围。</div></div></section>
+
+    <section class="section section-muted" id="screenshots"><div class="container"><div class="section-heading reveal"><div><span class="eyebrow">Screenshots</span><h2>多图展示位已准备好。</h2></div><p>以下为明确的素材槽，不代表真实产品界面。补图后只需替换对应图片路径与 alt。</p></div><div class="media-carousel reveal" data-carousel aria-label="Resonance Music 项目图片轮换"><div class="carousel-viewport"><figure class="carousel-slide" data-carousel-slide><img src="../../assets/images/project-image-placeholder.svg" width="1440" height="810" loading="lazy" decoding="async" alt="待补：Resonance Music 桌面端发现或音乐库页面截图"><figcaption>图片 1 · 桌面端发现页或音乐库全景</figcaption></figure><figure class="carousel-slide" data-carousel-slide><img src="../../assets/images/project-image-placeholder.svg" width="1440" height="810" loading="lazy" decoding="async" alt="待补：Resonance Music 播放与推荐原因页面截图"><figcaption>图片 2 · 播放状态、个性化推荐与推荐原因</figcaption></figure><figure class="carousel-slide" data-carousel-slide><img src="../../assets/images/project-image-placeholder.svg" width="1440" height="810" loading="lazy" decoding="async" alt="待补：Resonance Music 手机端自适应界面截图"><figcaption>图片 3 · 手机端底部导航与窄屏播放器</figcaption></figure></div><div class="carousel-controls"><button class="carousel-button" type="button" data-carousel-prev aria-label="上一张 Resonance Music 图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><div class="carousel-position"><div class="carousel-dots" aria-label="选择 Resonance Music 图片"><button class="carousel-dot" type="button" data-carousel-dot aria-label="查看第 1 张图片" aria-current="true"></button><button class="carousel-dot" type="button" data-carousel-dot aria-label="查看第 2 张图片" aria-current="false"></button><button class="carousel-dot" type="button" data-carousel-dot aria-label="查看第 3 张图片" aria-current="false"></button></div><span class="carousel-status" data-carousel-status aria-live="polite">1 / 3</span></div><button class="carousel-button" type="button" data-carousel-next aria-label="下一张 Resonance Music 图片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button></div><p class="carousel-help">可使用按钮、分页圆点或键盘左右方向键切换。</p></div></div></section>
+
+    <section class="section-compact"><div class="container"><div class="free-banner reveal"><div class="free-banner-content"><div><span class="free-label">REPOSITORY</span><h2>查看完整实现与维护边界。</h2><p>仓库包含架构说明、产品规格、推荐公式、测试和四平台构建配置。</p></div><a class="button button-primary" href="https://github.com/Xzeng666/Music-player" target="_blank" rel="noopener noreferrer">访问 GitHub</a></div></div></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-grid"><span>© <span data-year></span> Resonance Music · Clin</span><div class="footer-links"><a href="../../">个人主页</a><a href="../">全部项目</a><a href="mailto:zclin1013@126.com">联系</a></div></div></footer>
+</body>
+</html>

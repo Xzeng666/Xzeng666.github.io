@@ -1,0 +1,669 @@
+/* Page identities: shared interaction rules, project-specific visual language. */
+
+.project-theme {
+  --theme-rgb: 56, 189, 248;
+  --theme-alt-rgb: 52, 211, 153;
+  --button-ink: #04141f;
+  background:
+    radial-gradient(circle at 82% 5%, rgba(var(--theme-rgb), 0.17), transparent 32rem),
+    radial-gradient(circle at 8% 42%, rgba(var(--theme-alt-rgb), 0.1), transparent 28rem),
+    var(--bg);
+}
+
+.project-theme::before {
+  opacity: 0.34;
+  background-image:
+    linear-gradient(rgba(var(--theme-rgb), 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--theme-rgb), 0.045) 1px, transparent 1px);
+}
+
+.project-theme .site-header.is-scrolled {
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+}
+
+.project-theme .brand-mark {
+  border-color: rgba(var(--theme-rgb), 0.48);
+  background: linear-gradient(145deg, rgba(var(--theme-rgb), 0.22), rgba(var(--theme-alt-rgb), 0.1));
+}
+
+.project-theme .nav-links a:hover,
+.project-theme .nav-links a[aria-current="page"] {
+  background: rgba(var(--theme-rgb), 0.1);
+}
+
+.project-theme .button-primary {
+  background: var(--accent);
+  color: var(--button-ink);
+  box-shadow: 0 14px 30px rgba(var(--theme-alt-rgb), 0.2);
+}
+
+.project-theme .button-secondary {
+  border-color: var(--border-strong);
+  background: rgba(var(--theme-rgb), 0.09);
+  color: var(--primary-strong);
+}
+
+.project-theme .button-secondary:hover,
+.project-theme .carousel-button:hover {
+  border-color: var(--primary);
+  background: rgba(var(--theme-rgb), 0.16);
+}
+
+.project-theme .project-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.project-theme .project-hero > .container {
+  position: relative;
+  z-index: 2;
+}
+
+.project-theme .project-hero::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(112deg, rgba(var(--theme-rgb), 0.08), transparent 38%, rgba(var(--theme-alt-rgb), 0.05));
+}
+
+.project-theme .section-muted {
+  background: color-mix(in srgb, var(--bg-deep) 62%, transparent);
+}
+
+.project-theme .card,
+.project-theme .case-note,
+.project-theme .decision-card,
+.project-theme .case-result,
+.project-theme .flow-step,
+.project-theme .metric,
+.project-theme .contact-card {
+  background: linear-gradient(145deg, rgba(var(--theme-rgb), 0.1), color-mix(in srgb, var(--surface) 88%, transparent));
+}
+
+.project-theme .card::after {
+  background: rgba(var(--theme-rgb), 0.11);
+}
+
+.project-theme .card-icon {
+  border-color: rgba(var(--theme-rgb), 0.32);
+  background: rgba(var(--theme-rgb), 0.11);
+  color: var(--primary-strong);
+}
+
+.project-theme .case-hero-aside,
+.project-theme .comparison,
+.project-theme .carousel-button,
+.project-theme .badge {
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+}
+
+.project-theme .badge.accent {
+  border-color: rgba(var(--theme-alt-rgb), 0.38);
+  color: var(--accent-strong);
+}
+
+.project-theme .flow-step:not(:last-child)::after {
+  background: var(--primary);
+}
+
+.project-theme .case-result strong,
+.project-theme .decision-card span,
+.project-theme .flow-step span,
+.project-theme .metric strong {
+  color: var(--primary-strong);
+}
+
+.project-theme .carousel-slide img {
+  background: var(--bg-deep);
+}
+
+.project-theme .free-banner {
+  border-color: rgba(var(--theme-alt-rgb), 0.35);
+  background: linear-gradient(125deg, rgba(var(--theme-alt-rgb), 0.15), var(--surface) 55%, rgba(var(--theme-rgb), 0.12));
+}
+
+.project-theme .free-label {
+  border-color: rgba(var(--theme-alt-rgb), 0.36);
+  background: rgba(var(--theme-alt-rgb), 0.1);
+  color: var(--accent-strong);
+}
+
+/* Portfolio home: an editorial engineering index instead of a product landing page. */
+.page-home .portfolio-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+}
+
+.page-home .portfolio-hero::before {
+  position: absolute;
+  top: 8%;
+  right: max(2vw, calc((100vw - var(--container)) / 2 - 80px));
+  z-index: -1;
+  width: min(42vw, 620px);
+  height: 72%;
+  content: "";
+  border: 1px solid rgba(121, 167, 255, 0.12);
+  background:
+    linear-gradient(135deg, rgba(121, 167, 255, 0.08), transparent 45%),
+    repeating-linear-gradient(90deg, transparent 0 31px, rgba(85, 227, 172, 0.05) 31px 32px);
+  transform: skewX(-5deg);
+}
+
+.page-home .hero-grid {
+  align-items: end;
+  grid-template-columns: minmax(0, 1.16fr) minmax(360px, 0.64fr);
+  gap: 72px;
+}
+
+.page-home .hero h1 {
+  max-width: 900px;
+  font-size: clamp(52px, 7.4vw, 92px);
+}
+
+.page-home .hero-panel {
+  border-radius: 8px 32px 8px 32px;
+  background: linear-gradient(160deg, rgba(20, 36, 58, 0.92), rgba(5, 11, 20, 0.96));
+}
+
+.page-home .engineering-path li > span {
+  border-radius: 4px;
+}
+
+.page-home .direction-strip .trust-item:nth-child(1) { border-top: 2px solid #79a7ff; }
+.page-home .direction-strip .trust-item:nth-child(2) { border-top: 2px solid #55e3ac; }
+.page-home .direction-strip .trust-item:nth-child(3) { border-top: 2px solid #f6c453; }
+.page-home .direction-strip .trust-item:nth-child(4) { border-top: 2px solid #fb7185; }
+
+.page-home .about-profile {
+  border-left-width: 4px;
+  background: linear-gradient(90deg, rgba(34, 201, 139, 0.11), transparent 78%);
+}
+
+.page-projects .page-hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  background:
+    linear-gradient(110deg, rgba(121, 167, 255, 0.12), transparent 42%),
+    repeating-linear-gradient(90deg, transparent 0 71px, rgba(255, 255, 255, 0.025) 71px 72px);
+}
+
+/* Every project card carries the same identity as its detail page. */
+[data-project-theme] {
+  --card-rgb: 121, 167, 255;
+  --card-alt-rgb: 85, 227, 172;
+  --card-accent: #79a7ff;
+  --card-accent-strong: #dbe8ff;
+}
+
+[data-project-theme="lanexam"] { --card-rgb: 56, 189, 248; --card-alt-rgb: 52, 211, 153; --card-accent: #38bdf8; --card-accent-strong: #bae6fd; }
+[data-project-theme="music"] { --card-rgb: 167, 139, 250; --card-alt-rgb: 74, 222, 128; --card-accent: #a78bfa; --card-accent-strong: #ddd6fe; }
+[data-project-theme="asr"] { --card-rgb: 34, 211, 238; --card-alt-rgb: 251, 191, 36; --card-accent: #22d3ee; --card-accent-strong: #cffafe; }
+[data-project-theme="carmaker"] { --card-rgb: 249, 115, 22; --card-alt-rgb: 96, 165, 250; --card-accent: #f97316; --card-accent-strong: #fed7aa; }
+[data-project-theme="racecar"] { --card-rgb: 244, 63, 94; --card-alt-rgb: 34, 211, 238; --card-accent: #f43f5e; --card-accent-strong: #fecdd3; }
+
+.project-card[data-project-theme] {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-color: rgba(var(--card-rgb), 0.26);
+  background:
+    radial-gradient(circle at 94% 5%, rgba(var(--card-alt-rgb), 0.13), transparent 13rem),
+    linear-gradient(145deg, rgba(var(--card-rgb), 0.14), rgba(8, 14, 25, 0.94) 58%);
+}
+
+.project-card[data-project-theme]::before,
+.featured-project[data-project-theme]::before {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 2;
+  height: 3px;
+  content: "";
+  background: linear-gradient(90deg, var(--card-accent), rgba(var(--card-alt-rgb), 0.9), transparent 78%);
+}
+
+.project-card[data-project-theme] > * { position: relative; z-index: 1; }
+.project-card[data-project-theme] .project-category,
+.project-card[data-project-theme] .text-link { color: var(--card-accent-strong); }
+.project-card[data-project-theme] .project-index { color: rgba(var(--card-rgb), 0.58); }
+.project-card[data-project-theme] .project-highlight { border-left-color: var(--card-accent); background: rgba(var(--card-rgb), 0.08); }
+.project-card[data-project-theme] .button-secondary { border-color: rgba(var(--card-rgb), 0.38); background: rgba(var(--card-rgb), 0.1); color: var(--card-accent-strong); }
+.project-card[data-project-theme]:hover { border-color: rgba(var(--card-rgb), 0.62); }
+
+.featured-project[data-project-theme] {
+  position: relative;
+  border-color: rgba(var(--card-rgb), 0.46);
+  background: linear-gradient(145deg, rgba(var(--card-rgb), 0.15), rgba(6, 18, 30, 0.97));
+}
+
+.featured-project[data-project-theme] .project-kicker,
+.featured-project[data-project-theme] .text-link { color: var(--card-accent-strong); }
+.featured-project[data-project-theme] .project-highlight { border-left-color: var(--card-accent); background: rgba(var(--card-rgb), 0.08); }
+
+@media (min-width: 769px) {
+  .page-projects .projects-page-grid [data-project-theme="lanexam"] {
+    min-height: 330px;
+    grid-column: 1 / -1;
+  }
+
+  .page-projects .projects-page-grid [data-project-theme="lanexam"] > p,
+  .page-projects .projects-page-grid [data-project-theme="lanexam"] .project-highlight {
+    max-width: 760px;
+  }
+}
+
+/* LanExamSystem: trustworthy operations, soft depth and blue/green status signals. */
+.theme-lanexam {
+  --bg: #071426;
+  --bg-deep: #030b14;
+  --surface: #0d2037;
+  --surface-raised: #15314e;
+  --surface-soft: #0c1b2d;
+  --text: #f7fbff;
+  --text-soft: #d3e0ec;
+  --muted: #91abc2;
+  --primary: #38bdf8;
+  --primary-strong: #bae6fd;
+  --accent: #34d399;
+  --accent-strong: #a7f3d0;
+  --border: rgba(186, 230, 253, 0.13);
+  --border-strong: rgba(56, 189, 248, 0.46);
+  --theme-rgb: 56, 189, 248;
+  --theme-alt-rgb: 52, 211, 153;
+  --radius-md: 24px;
+  --radius-lg: 36px;
+}
+
+.theme-lanexam .project-hero::after {
+  position: absolute;
+  top: 22%;
+  right: -72px;
+  width: 320px;
+  height: 320px;
+  content: "";
+  border: 1px solid rgba(var(--theme-rgb), 0.14);
+  border-radius: 50%;
+  box-shadow: 0 0 0 54px rgba(var(--theme-rgb), 0.035), 0 0 0 108px rgba(var(--theme-alt-rgb), 0.025);
+}
+
+.theme-lanexam .visual-frame,
+.theme-lanexam .architecture-wrap {
+  border-color: rgba(var(--theme-rgb), 0.28);
+  border-radius: 30px;
+  box-shadow: 0 28px 72px rgba(0, 8, 20, 0.42);
+}
+
+.theme-lanexam .card,
+.theme-lanexam .metric,
+.theme-lanexam .flow-step {
+  box-shadow: 0 14px 40px rgba(0, 10, 24, 0.2);
+}
+
+.theme-lanexam .metric {
+  border-top: 2px solid rgba(var(--theme-alt-rgb), 0.55);
+}
+
+/* Resonance Music: rounded, immersive and rhythm-led. */
+.theme-music {
+  --bg: #09070f;
+  --bg-deep: #040306;
+  --surface: #171126;
+  --surface-raised: #25183d;
+  --surface-soft: #140d24;
+  --text: #fffafe;
+  --text-soft: #e7dcef;
+  --muted: #b3a3c2;
+  --primary: #a78bfa;
+  --primary-strong: #ddd6fe;
+  --accent: #4ade80;
+  --accent-strong: #86efac;
+  --border: rgba(221, 214, 254, 0.14);
+  --border-strong: rgba(167, 139, 250, 0.5);
+  --theme-rgb: 167, 139, 250;
+  --theme-alt-rgb: 74, 222, 128;
+  --radius-sm: 18px;
+  --radius-md: 28px;
+  --radius-lg: 42px;
+}
+
+.theme-music {
+  background:
+    radial-gradient(circle at 86% 4%, rgba(244, 114, 182, 0.2), transparent 29rem),
+    radial-gradient(circle at 14% 40%, rgba(74, 222, 128, 0.09), transparent 27rem),
+    radial-gradient(circle at 50% 18%, rgba(167, 139, 250, 0.14), transparent 38rem),
+    var(--bg);
+}
+
+.theme-music::before {
+  background-image: repeating-linear-gradient(90deg, transparent 0 20px, rgba(167, 139, 250, 0.045) 20px 21px);
+  background-size: auto;
+}
+
+.theme-music .case-hero-grid { grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.42fr); }
+.theme-music .case-hero h1 {
+  background: linear-gradient(96deg, #fff 4%, #ddd6fe 42%, #f9a8d4 72%, #86efac);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.theme-music .case-hero::after {
+  position: absolute;
+  right: 1%;
+  bottom: 8%;
+  z-index: -1;
+  width: 430px;
+  height: 190px;
+  content: "";
+  opacity: 0.24;
+  background: repeating-linear-gradient(90deg, var(--primary) 0 7px, transparent 7px 16px);
+  clip-path: polygon(0 65%, 7% 28%, 13% 72%, 20% 12%, 27% 56%, 34% 34%, 42% 82%, 49% 18%, 56% 62%, 64% 5%, 72% 75%, 80% 38%, 88% 68%, 94% 20%, 100% 58%, 100% 100%, 0 100%);
+}
+
+.theme-music .case-hero-aside {
+  border-radius: 36px 12px 36px 12px;
+  background: linear-gradient(160deg, rgba(167, 139, 250, 0.18), rgba(23, 17, 38, 0.9));
+  box-shadow: 0 28px 70px rgba(46, 16, 101, 0.26);
+}
+
+.theme-music .case-note,
+.theme-music .decision-card,
+.theme-music .flow-step,
+.theme-music .case-result {
+  border-radius: 26px;
+}
+
+.theme-music .flow { gap: 16px; }
+.theme-music .flow-step:nth-child(even) { border-color: rgba(74, 222, 128, 0.28); }
+.theme-music .carousel-slide { border-radius: 42px 12px 42px 12px; }
+
+/* Dialect ASR: research console, waveform cyan and audit amber. */
+.theme-asr {
+  --bg: #071116;
+  --bg-deep: #020608;
+  --surface: #10232a;
+  --surface-raised: #17343d;
+  --surface-soft: #0b1c22;
+  --text: #f4fcfd;
+  --text-soft: #d0e5e8;
+  --muted: #93afb4;
+  --primary: #22d3ee;
+  --primary-strong: #cffafe;
+  --accent: #fbbf24;
+  --accent-strong: #fde68a;
+  --warning: #fb923c;
+  --border: rgba(207, 250, 254, 0.13);
+  --border-strong: rgba(34, 211, 238, 0.5);
+  --theme-rgb: 34, 211, 238;
+  --theme-alt-rgb: 251, 191, 36;
+  --button-ink: #191000;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+}
+
+.theme-asr::before {
+  opacity: 0.4;
+  background-image:
+    linear-gradient(rgba(34, 211, 238, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.025) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.theme-asr .case-hero-grid { grid-template-columns: minmax(0, 0.94fr) minmax(360px, 0.56fr); }
+.theme-asr .case-hero h1 { max-width: 820px; letter-spacing: -0.04em; }
+.theme-asr .case-hero::after {
+  position: absolute;
+  right: 0;
+  bottom: 13%;
+  z-index: -1;
+  width: 48%;
+  height: 120px;
+  content: "";
+  opacity: 0.26;
+  background: var(--primary);
+  clip-path: polygon(0 49%, 7% 48%, 11% 38%, 15% 67%, 20% 20%, 25% 78%, 31% 43%, 37% 53%, 42% 12%, 48% 86%, 54% 45%, 60% 55%, 66% 30%, 72% 70%, 78% 43%, 84% 54%, 91% 38%, 100% 50%, 100% 52%, 91% 40%, 84% 56%, 78% 45%, 72% 72%, 66% 32%, 60% 57%, 54% 47%, 48% 88%, 42% 14%, 37% 55%, 31% 45%, 25% 80%, 20% 22%, 15% 69%, 11% 40%, 7% 50%, 0 51%);
+}
+
+.theme-asr .case-hero-aside {
+  border-style: dashed;
+  border-radius: 4px;
+  background: rgba(2, 6, 8, 0.78);
+  box-shadow: 12px 12px 0 rgba(34, 211, 238, 0.07);
+}
+
+.theme-asr .case-hero-aside > span,
+.theme-asr .case-hero-aside dt,
+.theme-asr .eyebrow,
+.theme-asr .flow-step span,
+.theme-asr .decision-card span {
+  font-family: Consolas, "SFMono-Regular", monospace;
+}
+
+.theme-asr .card,
+.theme-asr .case-note,
+.theme-asr .decision-card,
+.theme-asr .case-result {
+  border-radius: 4px;
+  border-left: 2px solid rgba(var(--theme-alt-rgb), 0.62);
+}
+
+.theme-asr .flow-step {
+  border-radius: 4px;
+  border-top: 3px solid rgba(var(--theme-rgb), 0.62);
+}
+
+.theme-asr .project-boundary {
+  border-left-color: var(--accent);
+  background: rgba(var(--theme-alt-rgb), 0.08);
+}
+
+/* CarMaker: industrial graphite, engineering grid and safety orange. */
+.theme-carmaker {
+  --bg: #111315;
+  --bg-deep: #070809;
+  --surface: #1b1f22;
+  --surface-raised: #262c31;
+  --surface-soft: #171a1d;
+  --text: #f8fafc;
+  --text-soft: #d7dde2;
+  --muted: #a0aab3;
+  --primary: #60a5fa;
+  --primary-strong: #bfdbfe;
+  --accent: #f97316;
+  --accent-strong: #fed7aa;
+  --warning: #fbbf24;
+  --border: rgba(226, 232, 240, 0.14);
+  --border-strong: rgba(249, 115, 22, 0.5);
+  --theme-rgb: 249, 115, 22;
+  --theme-alt-rgb: 96, 165, 250;
+  --button-ink: #1b0901;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --font-heading: Bahnschrift, "Arial Narrow", "Microsoft YaHei", sans-serif;
+}
+
+.theme-carmaker {
+  background:
+    linear-gradient(120deg, rgba(249, 115, 22, 0.08), transparent 30%),
+    radial-gradient(circle at 86% 8%, rgba(96, 165, 250, 0.12), transparent 28rem),
+    var(--bg);
+}
+
+.theme-carmaker::before {
+  opacity: 0.5;
+  background-image:
+    linear-gradient(rgba(226, 232, 240, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(226, 232, 240, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.theme-carmaker .case-hero-grid { grid-template-columns: minmax(0, 0.84fr) minmax(380px, 0.56fr); }
+.theme-carmaker .case-hero h1 { max-width: 800px; letter-spacing: -0.035em; }
+.theme-carmaker .case-hero::after {
+  position: absolute;
+  top: 20%;
+  right: 4%;
+  z-index: -1;
+  width: 420px;
+  height: 120px;
+  content: "";
+  border-block: 1px solid rgba(249, 115, 22, 0.26);
+  background: repeating-linear-gradient(135deg, rgba(249, 115, 22, 0.16) 0 10px, transparent 10px 22px);
+  transform: skewX(-18deg);
+}
+
+.theme-carmaker .case-hero-aside {
+  border-width: 1px 1px 1px 4px;
+  border-left-color: var(--accent);
+  border-radius: 2px;
+  background:
+    repeating-linear-gradient(135deg, rgba(249, 115, 22, 0.08) 0 6px, transparent 6px 13px),
+    rgba(20, 23, 25, 0.92);
+  background-size: 100% 7px, auto;
+  background-repeat: no-repeat;
+}
+
+.theme-carmaker .card,
+.theme-carmaker .case-note,
+.theme-carmaker .decision-card,
+.theme-carmaker .case-result,
+.theme-carmaker .flow-step {
+  border-radius: 2px;
+  border-top: 3px solid rgba(var(--theme-rgb), 0.62);
+}
+
+.theme-carmaker .flow-step:nth-child(even) { border-top-color: rgba(var(--theme-alt-rgb), 0.72); }
+.theme-carmaker .carousel-slide,
+.theme-carmaker .comparison,
+.theme-carmaker .free-banner { border-radius: 4px; }
+
+@media (min-width: 1100px) {
+  .theme-carmaker .decision-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* ROS 2 Racecar: telemetry black, safety red and perception cyan. */
+.theme-racecar {
+  --bg: #080a0c;
+  --bg-deep: #030405;
+  --surface: #13181c;
+  --surface-raised: #1b2328;
+  --surface-soft: #101417;
+  --text: #f8fafc;
+  --text-soft: #d8e0e5;
+  --muted: #98a8b3;
+  --primary: #22d3ee;
+  --primary-strong: #cffafe;
+  --accent: #f43f5e;
+  --accent-strong: #fecdd3;
+  --danger: #fb7185;
+  --border: rgba(207, 250, 254, 0.13);
+  --border-strong: rgba(244, 63, 94, 0.52);
+  --theme-rgb: 244, 63, 94;
+  --theme-alt-rgb: 34, 211, 238;
+  --button-ink: #ffffff;
+  --radius-sm: 2px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --font-heading: Bahnschrift, "Arial Narrow", "Microsoft YaHei", sans-serif;
+}
+
+.theme-racecar {
+  background:
+    radial-gradient(circle at 84% 5%, rgba(34, 211, 238, 0.12), transparent 25rem),
+    linear-gradient(118deg, rgba(244, 63, 94, 0.1), transparent 28%),
+    var(--bg);
+}
+
+.theme-racecar::before {
+  opacity: 0.34;
+  background-image: repeating-linear-gradient(135deg, transparent 0 42px, rgba(244, 63, 94, 0.055) 42px 43px);
+  background-size: auto;
+}
+
+.theme-racecar .case-hero-grid { grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.4fr); }
+.theme-racecar .case-hero h1 { max-width: 780px; text-transform: none; }
+.theme-racecar .case-hero::after {
+  position: absolute;
+  top: 0;
+  right: -80px;
+  z-index: -1;
+  width: 46%;
+  height: 100%;
+  content: "";
+  opacity: 0.34;
+  background:
+    repeating-linear-gradient(135deg, transparent 0 32px, rgba(244, 63, 94, 0.26) 32px 38px, transparent 38px 58px),
+    linear-gradient(90deg, transparent, rgba(34, 211, 238, 0.09));
+  transform: skewX(-10deg);
+}
+
+.theme-racecar .case-hero-aside {
+  border-width: 1px 3px;
+  border-right-color: var(--primary);
+  border-left-color: var(--accent);
+  border-radius: 0;
+  background: rgba(3, 4, 5, 0.78);
+}
+
+.theme-racecar .section-muted {
+  background: linear-gradient(112deg, rgba(244, 63, 94, 0.055), rgba(3, 4, 5, 0.7) 42%, rgba(34, 211, 238, 0.045));
+}
+
+.theme-racecar .card,
+.theme-racecar .case-note,
+.theme-racecar .decision-card,
+.theme-racecar .case-result,
+.theme-racecar .flow-step {
+  border-radius: 0;
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+}
+
+.theme-racecar .card,
+.theme-racecar .decision-card { border-left: 3px solid rgba(var(--theme-rgb), 0.68); }
+.theme-racecar .case-note,
+.theme-racecar .case-result { border-left: 3px solid rgba(var(--theme-alt-rgb), 0.62); }
+.theme-racecar .case-result strong { color: var(--accent-strong); }
+.theme-racecar .flow-step:nth-child(odd) { border-top: 2px solid var(--accent); }
+.theme-racecar .flow-step:nth-child(even) { border-top: 2px solid var(--primary); }
+.theme-racecar .carousel-slide { border-radius: 0 24px 0 24px; }
+
+@media (max-width: 1024px) {
+  .page-home .hero-grid,
+  .theme-music .case-hero-grid,
+  .theme-asr .case-hero-grid,
+  .theme-carmaker .case-hero-grid,
+  .theme-racecar .case-hero-grid { grid-template-columns: 1fr; }
+
+  .theme-music .case-hero::after,
+  .theme-asr .case-hero::after,
+  .theme-carmaker .case-hero::after,
+  .theme-racecar .case-hero::after { opacity: 0.12; }
+}
+
+@media (max-width: 768px) {
+  .project-theme .nav-links { background: color-mix(in srgb, var(--bg) 97%, var(--surface)); }
+  .page-home .portfolio-hero::before { right: -35%; width: 90%; opacity: 0.5; }
+  .page-home .hero h1 { font-size: clamp(44px, 13vw, 62px); }
+  .theme-music .case-hero-aside { border-radius: 28px 10px 28px 10px; }
+  .theme-carmaker .case-hero::after,
+  .theme-racecar .case-hero::after { right: -45%; width: 100%; }
+}
+
+@media (max-width: 420px) {
+  .project-theme .case-hero-aside { padding: 20px; }
+  .project-theme .case-hero-aside div { grid-template-columns: 78px 1fr; }
+  .theme-music .carousel-slide,
+  .theme-racecar .carousel-slide { border-radius: 18px 4px 18px 4px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-home .portfolio-hero::before,
+  .theme-racecar .case-hero::after,
+  .theme-carmaker .case-hero::after { transform: none; }
+}

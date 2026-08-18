@@ -78,7 +78,7 @@ GitHub Actions 只运行同一份 Python 标准库脚本，不替换当前 GitHu
 
 ## 图片规范
 
-- 优先使用真实运行截图、真实结果或经核验的架构图；不生成假界面冒充产品。
+- 优先使用真实运行截图、真实结果或经核验的架构图。
 - HTML 中写明 `width`、`height` 和有意义的 `alt`，避免 CLS。
 - 非首屏图片使用 `loading="lazy"` 与 `decoding="async"`。
 - 首屏 LCP 图片不 lazy-load；只在确有必要时使用 `fetchpriority="high"`。

@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="开源 CarMaker CameraRSI 多路视频采集工具：通过 MovieNX RSDS TCP 保存分段视频、采样图片与会话清单，支持 Windows、Linux、GUI 和 CLI。">
+  <meta name="keywords" content="CarMaker Camera Recorder, CameraRSI Recorder, IPG CarMaker, MovieNX, RSDS, CarMaker 视频采集, 多路摄像头录制, Python">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#08111f">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="CarMaker CameraRSI Recorder｜开源多路视频采集工具">
+  <meta property="og:description" content="通过 MovieNX RSDS TCP 采集多路 CameraRSI，提供 GUI、CLI、状态监控、分段视频与会话清单。">
+  <meta property="og:url" content="https://xzeng666.github.io/projects/carmaker-camera-recorder/">
+  <meta property="og:image" content="https://xzeng666.github.io/assets/images/carmaker-six-channel-real.jpg">
+  <meta property="og:image:alt" content="CarMaker CameraRSI Recorder 六路相机视频同步回放">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CarMaker CameraRSI Recorder｜开源多路视频采集工具">
+  <meta name="twitter:description" content="通过 MovieNX RSDS TCP 采集多路 CameraRSI，保存视频、图片与会话清单。">
+  <meta name="twitter:image" content="https://xzeng666.github.io/assets/images/carmaker-six-channel-real.jpg">
+  <title>CarMaker CameraRSI Recorder｜多路视频采集工具 · Clin</title>
+  <link rel="canonical" href="https://xzeng666.github.io/projects/carmaker-camera-recorder/">
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <link rel="stylesheet" href="../../assets/css/themes.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script defer src="../../assets/js/site.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "CarMaker CameraRSI Recorder",
+        "alternateName": "IPGCarMaker Camera Recorder",
+        "description": "通过 CarMaker / MovieNX RSDS TCP 数据流采集多路 CameraRSI，输出分段视频、采样图片、日志与会话清单的开源工具。",
+        "url": "https://xzeng666.github.io/projects/carmaker-camera-recorder/",
+        "downloadUrl": "https://github.com/Xzeng666/IPGCarMaker_Camera_Recorder",
+        "codeRepository": "https://github.com/Xzeng666/IPGCarMaker_Camera_Recorder",
+        "softwareVersion": "1.4.0",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Windows, Linux",
+        "programmingLanguage": "Python",
+        "license": "https://opensource.org/license/mit",
+        "isAccessibleForFree": true,
+        "image": "https://xzeng666.github.io/assets/images/carmaker-six-channel-real.jpg",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "author": {
+          "@type": "Person",
+          "name": "Clin",
+          "url": "https://xzeng666.github.io/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://xzeng666.github.io/"},
+          {"@type": "ListItem", "position": 2, "name": "项目", "item": "https://xzeng666.github.io/projects/"},
+          {"@type": "ListItem", "position": 3, "name": "CarMaker CameraRSI Recorder", "item": "https://xzeng666.github.io/projects/carmaker-camera-recorder/"}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="project-theme theme-carmaker">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="../../" aria-label="返回个人主页">
+        <span class="brand-mark" aria-hidden="true">CM</span>
+        <span class="brand-text">CameraRSI Recorder</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false" aria-controls="site-nav">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <nav class="nav-links" id="site-nav" aria-label="项目导航">
+        <a href="../../">主页</a>
+        <a href="#features">功能</a>
+        <a href="#workflow">工作流</a>
+        <a href="#start">开始使用</a>
+        <a href="../">全部项目</a>
+        <a href="https://github.com/Xzeng666/IPGCarMaker_Camera_Recorder" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="project-hero case-hero">
+      <div class="container project-hero-grid case-hero-grid">
+        <div>
+          <span class="eyebrow">Open source · MIT License</span>
+          <h1>CarMaker<br><span class="gradient-text">CameraRSI Recorder</span></h1>
+          <p class="hero-lead">从 CarMaker / MovieNX 的 RSDS TCP 数据流采集多路 CameraRSI，保存分段视频、定时采样图片和完整会话记录。</p>
+          <div class="badge-row" aria-label="项目技术标签">
+            <span class="badge accent">Python 3.10+</span>
+            <span class="badge">PySide6 GUI</span>
+            <span class="badge">RSDS TCP</span>
+            <span class="badge">OpenCV</span>
+            <span class="badge">Windows / Linux</span>
+          </div>
+          <div class="button-row">
+            <a class="button button-primary" href="https://github.com/Xzeng666/IPGCarMaker_Camera_Recorder" target="_blank" rel="noopener noreferrer">
+              获取源代码
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg>
+            </a>
+            <a class="button button-secondary" href="#start">查看运行方式</a>
+          </div>
+        </div>
+        <figure class="visual-frame reveal">
+          <img src="../../assets/images/carmaker-demo-map-real.jpg" width="1920" height="740" decoding="async" alt="CarMaker 演示地图中六路 CameraRSI 的实际录制回放画面">
+          <figcaption class="visual-caption">真实录制结果 · 演示地图中的六路 CameraRSI 回放</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="features">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">Capabilities</span><h2>围绕多相机采集建立完整的数据链路。</h2></div>
+          <p>程序在收到第一帧有效数据后创建独立会话，并持续记录每个相机与写入器的运行状态。</p>
+        </div>
+        <div class="card-grid">
+          <article class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v10H4zM8 3v4m8-4v4M8 21v-4m8 4v-4"/></svg></div>
+            <h3>多端口采集</h3><p>同时连接一个或多个 RSDS 端口，各端口独立重连，单路断开不会阻塞其他数据流。</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h13v10H3zM16 10l5-3v10l-5-3z"/></svg></div>
+            <h3>多路视频</h3><p>按 CameraRSI ID 分别写入视频；分辨率变化或较长时间间隔会触发新分段。</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m4 17 5-4 4 3 3-2 4 3"/></svg></div>
+            <h3>仿真时间采样</h3><p>依据每路 CameraRSI 的仿真时间保存静态图片，不受界面预览刷新频率影响。</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9m5 10V5m5 14v-7m5 7V3"/></svg></div>
+            <h3>实时监控</h3><p>显示吞吐率、队列高水位、丢帧、写入状态和磁盘余量，异常不会被静默忽略。</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v5h5M9 13h6M9 17h6"/></svg></div>
+            <h3>会话清单</h3><p>每次采集写入 session_manifest.json，保存配置、时间范围、相机统计与降级状态。</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM4 9h16M8 13l2 2-2 2m5 0h3"/></svg></div>
+            <h3>GUI 与 CLI</h3><p>日常操作可使用 PySide6 图形界面，自动化或远程环境可直接运行命令行版本。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="workflow">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">Data flow</span><h2>从 RSDS 数据流到可追溯的采集会话。</h2></div>
+          <p>接收、解析、缓存和写入分别处理，避免慢速磁盘操作直接阻塞网络接收。</p>
+        </div>
+        <div class="flow reveal" aria-label="运行时数据流程">
+          <article class="flow-step"><span>01</span><strong>CarMaker / MovieNX</strong><p>CameraRSI 通过一个或多个 TCP 端口输出。</p></article>
+          <article class="flow-step"><span>02</span><strong>独立接收器</strong><p>校验报文边界、限制负载大小并处理重连。</p></article>
+          <article class="flow-step"><span>03</span><strong>顺序处理器</strong><p>解析图像、识别相机 ID 与仿真时间。</p></article>
+          <article class="flow-step"><span>04</span><strong>相机写入器</strong><p>分别写入视频、图片并统计队列状态。</p></article>
+          <article class="flow-step"><span>05</span><strong>会话目录</strong><p>汇总 Videos、Images、日志与 Manifest。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">Recorded output</span><h2>实际六相机采集结果。</h2></div>
+          <p>下面的画面来自项目实际输出，不是示意图。每个窗口对应一个 CameraRSI 视角。</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="visual-frame reveal">
+            <img src="../../assets/images/carmaker-six-channel-real.jpg" width="1920" height="1049" loading="lazy" decoding="async" alt="停车测试场景中六路 CameraRSI 视频的实际同步回放">
+            <figcaption class="visual-caption">停车测试场景 · 前、后及四个侧向视角</figcaption>
+          </figure>
+          <figure class="visual-frame reveal">
+            <img src="../../assets/images/carmaker-demo-map-real.jpg" width="1920" height="740" loading="lazy" decoding="async" alt="道路演示场景中六路 CameraRSI 视频的实际同步回放">
+            <figcaption class="visual-caption">道路演示场景 · 六路相机同步输出</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="start">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">Quick start</span><h2>Windows 与 Linux 均可直接启动。</h2></div>
+          <p>需要 Python 3.10 或更高版本，以及已配置 CameraRSI 输出的 CarMaker / MovieNX。</p>
+        </div>
+        <div class="detail-grid">
+          <article class="card reveal">
+            <h3>Windows</h3>
+            <p>使用随仓库提供的脚本创建环境并启动图形界面：</p>
+            <pre class="code-block"><code>git clone https://github.com/Xzeng666/IPGCarMaker_Camera_Recorder.git
+cd IPGCarMaker_Camera_Recorder
+.\scripts\windows\start_gui.bat</code></pre>
+          </article>
+          <article class="card reveal">
+            <h3>Linux</h3>
+            <p>授予脚本执行权限后启动图形界面：</p>
+            <pre class="code-block"><code>git clone https://github.com/Xzeng666/IPGCarMaker_Camera_Recorder.git
+cd IPGCarMaker_Camera_Recorder
+chmod +x scripts/linux/*.sh
+./scripts/linux/start_gui.sh</code></pre>
+          </article>
+        </div>
+        <div class="notice reveal spaced-top"><strong>命令行模式：</strong>只需安装 requirements-core.txt，然后运行 <code>python run.py --config config.json</code>。图形界面使用 <code>python run_gui.py --config config.json</code>。</div>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="container project-feature">
+        <div class="feature-copy reveal">
+          <span class="eyebrow">Configuration</span>
+          <h2>严格配置，明确拒绝拼写错误与旧字段。</h2>
+          <p>默认 config.json 使用 schema v4。网络端口、输出策略、相机命名和故障策略集中配置，未知或缺失字段会在启动时报告。</p>
+          <ul class="check-list">
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span><strong>network</strong>：主机、端口、超时、重连与负载上限。</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span><strong>video / images</strong>：视频编码、帧率、分段和图片采样。</span></li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span><strong>reliability</strong>：磁盘阈值、写入故障策略与仿真时间回退阈值。</span></li>
+          </ul>
+          <div class="button-row spaced-top">
+            <a class="button button-secondary" href="https://github.com/Xzeng666/IPGCarMaker_Camera_Recorder/blob/main/docs/CONFIG_REFERENCE.md" target="_blank" rel="noopener noreferrer">阅读配置参考</a>
+          </div>
+        </div>
+        <article class="card reveal output-card">
+          <span class="eyebrow">Session output</span>
+          <pre class="code-block"><code>carmaker_videos/
+├── logs/
+│   └── recorder-YYYYMMDD.log
+└── YYYY.MM.DD-HH_MM_SS_mmm-scene-NNNN/
+    ├── Videos/
+    ├── Images/
+    └── session_manifest.json</code></pre>
+          <p>会话目录只在收到第一帧有效 CameraRSI 数据后创建。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="free-banner reveal">
+          <div class="free-banner-content">
+            <div>
+              <span class="free-label">MIT 开源</span>
+              <h2>源码、文档与测试均已公开。</h2>
+              <p>仓库包含架构与配置说明、单元和集成测试、项目自检脚本，以及 Windows 便携版构建脚本。运行 <code>python verify_project.py</code> 可执行完整的项目验证流程。</p>
+            </div>
+            <a class="button button-primary" href="https://github.com/Xzeng666/IPGCarMaker_Camera_Recorder" target="_blank" rel="noopener noreferrer">前往 GitHub</a>
+          </div>
+        </div>
+        <p class="project-disclaimer">本项目是独立开发的开源工具，与 IPG Automotive GmbH 无隶属或授权关系。CarMaker 和 MovieNX 是其各自权利人的商标。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <span>© <span data-year></span> Xzeng.</span>
+      <div class="footer-links"><a href="../../">主页</a><a href="../">全部项目</a><a href="../../lanexamsystem/">LanExamSystem</a><a href="https://github.com/Xzeng666/IPGCarMaker_Camera_Recorder" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+    </div>
+  </footer>
+</body>
+</html>

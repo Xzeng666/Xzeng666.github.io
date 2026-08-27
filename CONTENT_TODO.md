@@ -7,7 +7,7 @@
 1. [ ] TODO(USER): 提供正式个人简介，确认是否替换当前基于项目方向整理的简介。
 2. [ ] TODO(USER): 提供可公开的正式简历内容或 PDF，并确认下载文件名。
 3. [ ] TODO(USER): 提供 1200×630 Open Graph 封面图。
-4. [ ] TODO(USER): 确认方言 ASR 与 CarMaker 工具链是否公开代码仓库；独立项目页已建立。
+4. [ ] TODO(USER): 确认方言 ASR 是否公开代码仓库；独立项目页已建立。
 5. [ ] TODO(USER): 选择第一批正式技术文章并提供可发布内容。
 
 ## 基础信息
@@ -26,8 +26,6 @@
 - [ ] TODO(USER): 提供 Resonance Music 桌面全景、推荐/播放、手机端三组真实截图，并替换 `projects/music-player/index.html` 中的占位图。
 - [ ] TODO(USER): 提供川渝智能导航方言 ASR 架构、质量审计、分片恢复/最终构建三组可公开图片，并确认哪些竞赛背景可以公开。
 - [ ] TODO(USER): 确认方言 ASR 是否创建公开仓库及仓库 URL。
-- [ ] TODO(USER): 提供 CarMaker Test Manager、6 路视频回流、KPI 输出三组可公开截图，并确认敏感信息脱敏范围。
-- [ ] TODO(USER): 确认 CarMaker 工具链是否创建公开仓库及仓库 URL。
 - [ ] TODO(USER): 提供 Racecar 感知调试、控制曲线、实车或仿真三组截图；当前公开仓库明确说明尚未在作者实际底盘验证，网站不会暗示已完成实车验收。
 - [x] Music Player、方言 ASR、CarMaker 和 Racecar 的完整 Case Study 页面已建立。
 

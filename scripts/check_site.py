@@ -14,6 +14,11 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 SKIP_LINK_SCHEMES = {"http", "https", "mailto", "tel", "data", "javascript"}
+GOOGLE_VERIFICATION_NAME = re.compile(r"google[a-z0-9]+\.html", re.IGNORECASE)
+GOOGLE_VERIFICATION_CONTENT = re.compile(
+    r"google-site-verification: (google[a-z0-9]+\.html)\s*\Z",
+    re.IGNORECASE,
+)
 
 
 class PageParser(HTMLParser):
@@ -82,6 +87,11 @@ class PageParser(HTMLParser):
 def parse_pages() -> dict[Path, PageParser]:
     pages: dict[Path, PageParser] = {}
     for path in sorted(ROOT.rglob("*.html")):
+        if path.parent == ROOT and GOOGLE_VERIFICATION_NAME.fullmatch(path.name):
+            content = path.read_text(encoding="utf-8")
+            match = GOOGLE_VERIFICATION_CONTENT.fullmatch(content)
+            if match and match.group(1).lower() == path.name.lower():
+                continue
         parser = PageParser()
         parser.feed(path.read_text(encoding="utf-8"))
         pages[path.resolve()] = parser

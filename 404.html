@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-language="zh" data-language-counterpart="/en/404.html">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,8 +7,13 @@
   <meta name="robots" content="noindex,follow">
   <meta name="theme-color" content="#08111f">
   <title>404 · Route Not Found</title>
+  <link rel="alternate" hreflang="zh-CN" href="https://xzeng666.github.io/404.html">
+  <link rel="alternate" hreflang="en" href="https://xzeng666.github.io/en/404.html">
   <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/css/site.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script defer src="/assets/js/locale.js"></script>
+  <script defer src="/assets/js/site.js"></script>
 </head>
 <body>
   <main class="hero" id="main">
@@ -18,7 +23,7 @@
         <p class="terminal-line">error: route returned null</p>
         <h1>404</h1>
         <p>这个页面不存在，可能已被移动或输入有误。你可以返回主页，或继续浏览完整项目列表。</p>
-        <div class="button-row"><a class="button button-primary" href="/">返回首页</a><a class="button button-secondary" href="/projects/">查看项目</a></div>
+        <div class="button-row"><a class="button button-primary" href="/">返回首页</a><a class="button button-secondary" href="/projects/">查看项目</a><a class="button button-secondary" data-language-toggle href="/en/404.html" lang="en" hreflang="en">English</a></div>
       </div>
     </div>
   </main>

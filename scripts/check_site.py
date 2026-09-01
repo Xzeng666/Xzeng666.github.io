@@ -31,6 +31,10 @@ class PageParser(HTMLParser):
         self.inline_styles = 0
         self.has_main = False
         self.has_lang = False
+        self.language = ""
+        self.language_counterpart = ""
+        self.alternate_languages: set[str] = set()
+        self.has_locale_script = False
         self.has_title = False
         self.has_description = False
         self.has_canonical = False
@@ -47,6 +51,8 @@ class PageParser(HTMLParser):
             self.inline_styles += 1
         if tag == "html" and values.get("lang"):
             self.has_lang = True
+            self.language = values.get("data-language") or ""
+            self.language_counterpart = values.get("data-language-counterpart") or ""
         if tag == "main":
             self.has_main = True
         if tag == "title":
@@ -61,6 +67,10 @@ class PageParser(HTMLParser):
                 self.social_meta.add(social_key.lower())
         if tag == "link" and values.get("rel", "").lower() == "canonical" and values.get("href"):
             self.has_canonical = True
+        if tag == "link" and values.get("rel", "").lower() == "alternate" and values.get("hreflang"):
+            self.alternate_languages.add((values.get("hreflang") or "").lower())
+        if tag == "script" and (values.get("src") or "").endswith("assets/js/locale.js"):
+            self.has_locale_script = True
         if tag == "script" and values.get("type", "").lower() == "application/ld+json":
             self._json_ld_buffer = []
         if tag == "a" and values.get("href"):
@@ -122,6 +132,9 @@ def main() -> int:
         rel = path.relative_to(ROOT)
         for label, passed in (
             ("html lang", page.has_lang),
+            ("language code", page.language in {"zh", "en"}),
+            ("language counterpart", bool(page.language_counterpart)),
+            ("locale script", page.has_locale_script),
             ("title", page.has_title),
             ("meta description", page.has_description),
             ("main landmark", page.has_main),
@@ -130,6 +143,12 @@ def main() -> int:
                 errors.append(f"{rel}: missing {label}")
         if rel.name != "404.html" and not page.noindex and not page.has_canonical:
             errors.append(f"{rel}: indexable page is missing canonical")
+        if not page.noindex and not {"zh-cn", "en"}.issubset(page.alternate_languages):
+            errors.append(f"{rel}: indexable page is missing zh-CN/en hreflang alternates")
+        if page.language_counterpart:
+            counterpart, _ = target_path(path, page.language_counterpart)
+            if counterpart is None or not counterpart.exists():
+                errors.append(f"{rel}: language counterpart is missing: {page.language_counterpart}")
         if not page.noindex:
             required_social = {"og:type", "og:title", "og:description", "og:url", "twitter:card", "twitter:title", "twitter:description"}
             missing_social = sorted(required_social - page.social_meta)

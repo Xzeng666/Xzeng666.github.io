@@ -1,12 +1,15 @@
 # Xzeng666.github.io
 
-个人技术主页与项目作品集，使用原生 HTML、CSS 和 JavaScript 构建，由 GitHub Pages 直接托管。
+中英双语个人技术主页与项目作品集，使用原生 HTML、CSS 和 JavaScript 构建，由 GitHub Pages 直接托管。
+
+首次访问会读取浏览器首选语言：中文设备进入中文页面，其他语言进入英文页面。导航中的 `English / 中文` 按钮可以随时切换，选择会保存在浏览器本地。中文页面使用原有 URL，英文页面位于 `/en/`，两套页面通过 `hreflang`、canonical 和站点地图互相声明。
 
 ## 主要页面
 
 - `/`：个人主页与精选项目。
+- `/en/`：英文个人主页与对应英文页面入口。
 - `/projects/`：全部项目与分类筛选。
-- `/projects/carmaker-camera-recorder/`：CarMaker CameraRSI Recorder 项目介绍、真实采集结果与使用方式。
+- `/projects/carmaker-camera-recorder/`：CarMaker CameraRSI Recorder 1.5.0 项目介绍、真实采集结果、双语界面与硬件编码说明。
 - `/lanexamsystem/`：LanExamSystem 项目介绍。
 - `/articles/`：技术文章入口。
 
@@ -24,11 +27,11 @@ python -m http.server 4173
 python scripts/check_site.py
 ```
 
-检查内容包括页面元数据、内部链接、图片说明、静态资源路径、站点地图和可访问性基础项。
+检查内容包括页面元数据、中英文对应页、`hreflang`、内部链接、图片说明、静态资源路径、站点地图和可访问性基础项。
 
 ## 图片来源
 
-CarMaker CameraRSI Recorder 页面使用项目实际录制结果；LanExamSystem 页面使用程序实际运行截图。图片仅用于说明对应项目的真实输出与界面。
+CarMaker CameraRSI Recorder 页面使用项目实际中英文 GUI 截图与录制结果；LanExamSystem 页面使用程序实际运行截图。图片仅用于说明对应项目的真实输出与界面。
 
 ## 部署
 

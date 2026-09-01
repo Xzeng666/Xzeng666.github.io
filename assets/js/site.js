@@ -2,13 +2,16 @@
   const header = document.querySelector('.site-header');
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
+  const isChinese = document.documentElement.lang.toLowerCase().startsWith('zh');
+  const openLabel = navToggle?.dataset.labelOpen || (isChinese ? '展开导航' : 'Open navigation');
+  const closeLabel = navToggle?.dataset.labelClose || (isChinese ? '收起导航' : 'Close navigation');
 
   const syncHeader = () => header?.classList.toggle('is-scrolled', window.scrollY > 12);
   const closeNavigation = ({ returnFocus = false } = {}) => {
     if (!navLinks?.classList.contains('is-open')) return;
     navLinks.classList.remove('is-open');
     navToggle?.setAttribute('aria-expanded', 'false');
-    navToggle?.setAttribute('aria-label', '展开导航');
+    navToggle?.setAttribute('aria-label', openLabel);
     if (returnFocus) navToggle?.focus();
   };
 
@@ -18,7 +21,7 @@
   navToggle?.addEventListener('click', () => {
     const open = navLinks?.classList.toggle('is-open') ?? false;
     navToggle.setAttribute('aria-expanded', String(open));
-    navToggle.setAttribute('aria-label', open ? '收起导航' : '展开导航');
+    navToggle.setAttribute('aria-label', open ? closeLabel : openLabel);
   });
 
   navLinks?.querySelectorAll('a').forEach((link) => {

@@ -1,53 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url>
-    <loc>https://xzeng666.github.io/</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://xzeng666.github.io/projects/</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://xzeng666.github.io/lanexamsystem/</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://xzeng666.github.io/projects/music-player/</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://xzeng666.github.io/projects/dialect-asr/</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://xzeng666.github.io/projects/carmaker-camera-recorder/</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <image:image><image:loc>https://xzeng666.github.io/assets/images/carmaker-six-channel-real.jpg</image:loc><image:title>CarMaker CameraRSI Recorder 六路相机同步回放</image:title></image:image>
-    <image:image><image:loc>https://xzeng666.github.io/assets/images/carmaker-demo-map-real.jpg</image:loc><image:title>CarMaker CameraRSI 六路视频采集结果</image:title></image:image>
-  </url>
-  <url>
-    <loc>https://xzeng666.github.io/projects/racecar/</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://xzeng666.github.io/articles/</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url><loc>https://xzeng666.github.io/</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>1.0</priority><xhtml:link rel="alternate" hreflang="zh-CN" href="https://xzeng666.github.io/"/><xhtml:link rel="alternate" hreflang="en" href="https://xzeng666.github.io/en/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://xzeng666.github.io/en/"/></url>
+  <url><loc>https://xzeng666.github.io/en/</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>1.0</priority><xhtml:link rel="alternate" hreflang="zh-CN" href="https://xzeng666.github.io/"/><xhtml:link rel="alternate" hreflang="en" href="https://xzeng666.github.io/en/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://xzeng666.github.io/en/"/></url>
+  <url><loc>https://xzeng666.github.io/projects/</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority><xhtml:link rel="alternate" hreflang="zh-CN" href="https://xzeng666.github.io/projects/"/><xhtml:link rel="alternate" hreflang="en" href="https://xzeng666.github.io/en/projects/"/></url>
+  <url><loc>https://xzeng666.github.io/en/projects/</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority><xhtml:link rel="alternate" hreflang="zh-CN" href="https://xzeng666.github.io/projects/"/><xhtml:link rel="alternate" hreflang="en" href="https://xzeng666.github.io/en/projects/"/></url>
+  <url><loc>https://xzeng666.github.io/lanexamsystem/</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="zh-CN" href="https://xzeng666.github.io/lanexamsystem/"/><xhtml:link rel="alternate" hreflang="en" href="https://xzeng666.github.io/en/lanexamsystem/"/></url>
+  <url><loc>https://xzeng666.github.io/en/lanexamsystem/</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="zh-CN" href="https://xzeng666.github.io/lanexamsystem/"/><xhtml:link rel="alternate" hreflang="en" href="https://xzeng666.github.io/en/lanexamsystem/"/></url>
+  <url><loc>https://xzeng666.github.io/projects/music-player/</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="zh-CN" href="https://xzeng666.github.io/projects/music-player/"/><xhtml:link rel="alternate" hreflang="en" href="https://xzeng666.github.io/en/projects/music-player/"/></url>
+  <url><loc>https://xzeng666.github.io/en/projects/music-player/</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="zh-CN" href="https://xzeng666.github.io/projects/music-player/"/><xhtml:link rel="alternate" hreflang="en" href="https://xzeng666.github.io/en/projects/music-player/"/></url>
+  <url><loc>https://xzeng666.github.io/projects/dialect-asr/</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="zh-CN" href="https://xzeng666.github.io/projects/dialect-asr/"/><xhtml:link rel="alternate" hreflang="en" href="https://xzeng666.github.io/en/projects/dialect-asr/"/></url>
+  <url><loc>https://xzeng666.github.io/en/projects/dialect-asr/</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="zh-CN" href="https://xzeng666.github.io/projects/dialect-asr/"/><xhtml:link rel="alternate" hreflang="en" href="https://xzeng666.github.io/en/projects/dialect-asr/"/></url>
+  <url><loc>https://xzeng666.github.io/projects/carmaker-camera-recorder/</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority><xhtml:link rel="alternate" hreflang="zh-CN" href="https://xzeng666.github.io/projects/carmaker-camera-recorder/"/><xhtml:link rel="alternate" hreflang="en" href="https://xzeng666.github.io/en/projects/carmaker-camera-recorder/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://xzeng666.github.io/en/projects/carmaker-camera-recorder/"/><image:image><image:loc>https://xzeng666.github.io/assets/images/carmaker-gui-zh.png</image:loc><image:title>CarMaker CameraRSI Recorder 中文采集监控界面</image:title></image:image><image:image><image:loc>https://xzeng666.github.io/assets/images/carmaker-six-channel-real.jpg</image:loc><image:title>CarMaker CameraRSI 六路相机同步回放</image:title></image:image></url>
+  <url><loc>https://xzeng666.github.io/en/projects/carmaker-camera-recorder/</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.9</priority><xhtml:link rel="alternate" hreflang="zh-CN" href="https://xzeng666.github.io/projects/carmaker-camera-recorder/"/><xhtml:link rel="alternate" hreflang="en" href="https://xzeng666.github.io/en/projects/carmaker-camera-recorder/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://xzeng666.github.io/en/projects/carmaker-camera-recorder/"/><image:image><image:loc>https://xzeng666.github.io/assets/images/carmaker-gui-en.png</image:loc><image:title>CarMaker CameraRSI Recorder English capture monitor</image:title></image:image><image:image><image:loc>https://xzeng666.github.io/assets/images/carmaker-six-channel-real.jpg</image:loc><image:title>Six synchronized CarMaker CameraRSI views</image:title></image:image></url>
+  <url><loc>https://xzeng666.github.io/projects/racecar/</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="zh-CN" href="https://xzeng666.github.io/projects/racecar/"/><xhtml:link rel="alternate" hreflang="en" href="https://xzeng666.github.io/en/projects/racecar/"/></url>
+  <url><loc>https://xzeng666.github.io/en/projects/racecar/</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="zh-CN" href="https://xzeng666.github.io/projects/racecar/"/><xhtml:link rel="alternate" hreflang="en" href="https://xzeng666.github.io/en/projects/racecar/"/></url>
+  <url><loc>https://xzeng666.github.io/articles/</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="zh-CN" href="https://xzeng666.github.io/articles/"/><xhtml:link rel="alternate" hreflang="en" href="https://xzeng666.github.io/en/articles/"/></url>
+  <url><loc>https://xzeng666.github.io/en/articles/</loc><lastmod>2026-09-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><xhtml:link rel="alternate" hreflang="zh-CN" href="https://xzeng666.github.io/articles/"/><xhtml:link rel="alternate" hreflang="en" href="https://xzeng666.github.io/en/articles/"/></url>
 </urlset>

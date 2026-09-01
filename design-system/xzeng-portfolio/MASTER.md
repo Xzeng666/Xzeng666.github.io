@@ -114,6 +114,15 @@ Project themes override these semantic tokens rather than introducing raw colors
 - Images require dimensions and meaningful alt text; decorative SVGs use `aria-hidden="true"`.
 - Project filtering uses native buttons and `aria-pressed`; without JavaScript all projects remain visible.
 
+## Localization
+
+- Chinese is served from the original URLs with `lang="zh-CN"`; English is served from mirrored `/en/` URLs with `lang="en"`.
+- Every content page declares its reciprocal `zh-CN` and `en` alternatives. Indexable pages also provide canonical and `x-default` where appropriate.
+- On first visit, `assets/js/locale.js` uses the browser's preferred language. A saved manual preference always takes priority.
+- The language control is appended consistently to the primary navigation, uses text labels (`English` / `中文`), and retains the same-page route and hash when redirecting.
+- Manual language selection is stored only in `localStorage`; no location, analytics, or remote API is used.
+- Translations preserve verified facts and project boundaries. English copy must not introduce claims absent from the Chinese source or project documentation.
+
 ## Performance
 
 - Target: homepage HTML under 100 KB, CSS under 50 KB, JS under 20 KB.

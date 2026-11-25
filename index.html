@@ -128,44 +128,24 @@
           <p>以下内容均来自现有代码、公开仓库或本地项目资料；未确认的指标和经历不作展示。</p>
         </div>
 
-        <article class="featured-project reveal" data-project-theme="lanexam">
+        <article class="featured-project reveal" data-project-theme="reqif">
           <div class="featured-project-copy">
-            <div class="project-kicker"><span>FEATURED CASE STUDY</span><span>持续迭代</span></div>
-            <h3>LanExamSystem</h3>
-            <p>面向局域网考试场景的桌面系统，覆盖题库、组卷、定向发布、答题恢复、集中交卷、自动判分、报告与归档。</p>
-            <div class="project-highlight"><small>工程重点</small><strong>断网与重启恢复 · 服务端快照 · 持久化判分队列</strong></div>
-            <ul class="project-tag-list" aria-label="LanExamSystem 技术标签">
-              <li class="project-tag">C#</li><li class="project-tag">.NET</li><li class="project-tag">Desktop</li><li class="project-tag">Networking</li><li class="project-tag">MySQL</li>
-            </ul>
-            <div class="project-actions"><a class="button button-primary" href="./lanexamsystem/">阅读 Case Study</a><a class="text-link" href="https://github.com/Xzeng666/LanExamSystem" target="_blank" rel="noopener noreferrer">GitHub<span aria-hidden="true">↗</span></a></div>
+            <div class="project-kicker"><span>ReqIF / ReqIFz</span><span>MIT</span></div>
+            <h3>ReqIF Web Viewer</h3>
+            <p>在浏览器中直接查看本机 ReqIF / ReqIFz 文件，支持文档层级、全文搜索、属性筛选、关联关系与附件。</p>
+            <div class="project-highlight"><small>工程重点</small><strong>文件在浏览器本地处理 · 文档与工作项双视图</strong></div>
+            <ul class="project-tag-list" aria-label="ReqIF Web Viewer"><li class="project-tag">JavaScript</li><li class="project-tag">ReqIF</li><li class="project-tag">ReqIFz</li><li class="project-tag">GitHub Pages</li></ul>
+            <div class="project-actions"><a class="button button-primary" href="./projects/reqif-web-viewer/">查看项目介绍</a><a class="text-link" href="https://xzeng666.github.io/reqif-web-viewer/">立即使用</a></div>
           </div>
           <figure class="featured-project-media">
-            <img src="./assets/images/lanexam-server-real.jpg" width="1440" height="785" loading="lazy" decoding="async" alt="LanExamSystem 教师管理端实际运行界面截图">
-            <figcaption>真实运行截图 · 教师端考试控制台</figcaption>
+            <img src="./assets/images/reqif-document-real.png" width="1440" height="960" loading="lazy" decoding="async" alt="ReqIF Web Viewer 实际文档视图，左侧为需求目录，中间为温度监测正文与表格，右侧为属性和关联关系">
+            <figcaption>真实运行截图 · 示例需求的文档与属性</figcaption>
           </figure>
         </article>
 
         <div class="project-card-grid">
-          <article class="project-card reveal" data-project-theme="music">
-            <div class="project-card-top"><span class="project-category">Software · AI</span><span class="project-index" aria-hidden="true">02</span></div>
-            <h3>Resonance Music</h3>
-            <p>Flutter 跨平台音乐播放器，以本地优先的数据模型记录听歌行为，通过多标签、阈值与衰减机制生成可解释推荐。</p>
-            <div class="project-highlight"><small>工程重点</small><strong>多端自适应 · 合规音源 · 设备端推荐</strong></div>
-            <ul class="project-tag-list" aria-label="Resonance Music 技术标签"><li class="project-tag">Flutter</li><li class="project-tag">Dart</li><li class="project-tag">Desktop</li><li class="project-tag">Mobile</li></ul>
-            <div class="project-actions"><a class="button button-secondary" href="./projects/music-player/">查看项目页</a><a class="text-link" href="https://github.com/Xzeng666/Music-player" target="_blank" rel="noopener noreferrer">GitHub<span aria-hidden="true">↗</span></a></div>
-          </article>
-
-          <article class="project-card reveal" data-project-theme="asr">
-            <div class="project-card-top"><span class="project-category">AI · ASR</span><span class="project-index" aria-hidden="true">03</span></div>
-            <h3>川渝智能导航方言 ASR</h3>
-            <p>面向川渝导航语音的离线识别流水线，通过异常检测、受约束重试、模型回退与确定性后处理提升推理稳健性。</p>
-            <div class="project-highlight"><small>工程重点</small><strong>离线推理 · 分片恢复 · 质量门禁与审计</strong></div>
-            <ul class="project-tag-list" aria-label="方言 ASR 技术标签"><li class="project-tag">Python</li><li class="project-tag">ASR</li><li class="project-tag">Whisper</li><li class="project-tag">Data Processing</li></ul>
-            <div class="project-actions"><a class="button button-secondary" href="./projects/dialect-asr/">查看项目页</a></div>
-          </article>
-
           <article class="project-card reveal" data-project-theme="carmaker">
-            <div class="project-card-top"><span class="project-category">Automotive · Automation</span><span class="project-index" aria-hidden="true">04</span></div>
+            <div class="project-card-top"><span class="project-category">Automotive · Automation</span></div>
             <h3>CarMaker CameraRSI Recorder</h3>
             <p>开源的多路 CameraRSI 采集工具，通过 RSDS TCP 保存分段视频、采样图片与可追溯的会话清单，支持双语界面和可回退硬件编码。</p>
             <div class="project-highlight"><small>工程重点</small><strong>多端口独立重连 · NVENC / QSV / AMF · 中文 / English GUI</strong></div>
@@ -174,12 +154,42 @@
           </article>
 
           <article class="project-card reveal" data-project-theme="racecar">
-            <div class="project-card-top"><span class="project-category">Automotive · Robotics</span><span class="project-index" aria-hidden="true">05</span></div>
+            <div class="project-card-top"><span class="project-category">Automotive · Robotics</span></div>
             <h3>ROS 2 Racecar</h3>
             <p>面向室外红蓝锥桶赛道的视觉循迹与安全控制项目，集成锥桶感知、PID 控制、任务状态机和失效安全机制。</p>
             <div class="project-highlight"><small>工程重点</small><strong>感知置信度 · 安全停车 · Twist/PWM 适配</strong></div>
             <ul class="project-tag-list" aria-label="Racecar 技术标签"><li class="project-tag">ROS 2</li><li class="project-tag">OpenCV</li><li class="project-tag">Python</li><li class="project-tag">PID</li></ul>
             <div class="project-actions"><a class="button button-secondary" href="./projects/racecar/">查看项目页</a><a class="text-link" href="https://github.com/Xzeng666/racecar" target="_blank" rel="noopener noreferrer">GitHub<span aria-hidden="true">↗</span></a></div>
+          </article>
+
+          <article class="project-card reveal" data-project-theme="asr">
+            <div class="project-card-top"><span class="project-category">AI · ASR</span></div>
+            <h3>川渝智能导航方言 ASR</h3>
+            <p>面向川渝导航语音的离线识别流水线，通过异常检测、受约束重试、模型回退与确定性后处理提升推理稳健性。</p>
+            <div class="project-highlight"><small>工程重点</small><strong>离线推理 · 分片恢复 · 质量门禁与审计</strong></div>
+            <ul class="project-tag-list" aria-label="方言 ASR 技术标签"><li class="project-tag">Python</li><li class="project-tag">ASR</li><li class="project-tag">Whisper</li><li class="project-tag">Data Processing</li></ul>
+            <div class="project-actions"><a class="button button-secondary" href="./projects/dialect-asr/">查看项目页</a></div>
+          </article>
+
+          <article class="project-card reveal" data-project-theme="lanexam">
+          <div class="project-card-top"><span class="project-category">Software · Networking</span></div>
+            <h3>LanExamSystem</h3>
+            <p>面向局域网考试场景的桌面系统，覆盖题库、组卷、定向发布、答题恢复、集中交卷、自动判分、报告与归档。</p>
+            <div class="project-highlight"><small>工程重点</small><strong>断网与重启恢复 · 服务端快照 · 持久化判分队列</strong></div>
+            <ul class="project-tag-list" aria-label="LanExamSystem 技术标签">
+              <li class="project-tag">C#</li><li class="project-tag">.NET</li><li class="project-tag">Desktop</li><li class="project-tag">Networking</li><li class="project-tag">MySQL</li>
+            </ul>
+            <div class="project-actions"><a class="button button-primary" href="./lanexamsystem/">阅读 Case Study</a><a class="text-link" href="https://github.com/Xzeng666/LanExamSystem" target="_blank" rel="noopener noreferrer">GitHub<span aria-hidden="true">↗</span></a></div>
+
+        </article>
+
+          <article class="project-card reveal" data-project-theme="music">
+            <div class="project-card-top"><span class="project-category">Software · AI</span></div>
+            <h3>Resonance Music</h3>
+            <p>Flutter 跨平台音乐播放器，以本地优先的数据模型记录听歌行为，通过多标签、阈值与衰减机制生成可解释推荐。</p>
+            <div class="project-highlight"><small>工程重点</small><strong>多端自适应 · 合规音源 · 设备端推荐</strong></div>
+            <ul class="project-tag-list" aria-label="Resonance Music 技术标签"><li class="project-tag">Flutter</li><li class="project-tag">Dart</li><li class="project-tag">Desktop</li><li class="project-tag">Mobile</li></ul>
+            <div class="project-actions"><a class="button button-secondary" href="./projects/music-player/">查看项目页</a><a class="text-link" href="https://github.com/Xzeng666/Music-player" target="_blank" rel="noopener noreferrer">GitHub<span aria-hidden="true">↗</span></a></div>
           </article>
         </div>
         <div class="section-actions reveal"><a class="button button-secondary" href="./projects/">查看全部项目与分类</a></div>

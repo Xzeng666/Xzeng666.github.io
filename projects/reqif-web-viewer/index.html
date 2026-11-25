@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="zh-CN" data-language="zh" data-language-counterpart="/en/projects/reqif-web-viewer/">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ReqIF Web Viewer 是开源的浏览器本地需求查看器，支持 ReqIF / ReqIFz 文档阅读、全文搜索、属性筛选、关联关系与附件。">
+  <meta name="theme-color" content="#08111f">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ReqIF Web Viewer｜在浏览器中阅读需求文件 · Clin">
+  <meta property="og:description" content="ReqIF Web Viewer 是开源的浏览器本地需求查看器，支持 ReqIF / ReqIFz 文档阅读、全文搜索、属性筛选、关联关系与附件。">
+  <meta property="og:url" content="https://xzeng666.github.io/projects/reqif-web-viewer/">
+  <meta property="og:image" content="https://xzeng666.github.io/assets/images/reqif-document-real.png">
+  <meta property="og:image:alt" content="ReqIF Web Viewer 实际文档视图，左侧为需求目录，中间为温度监测正文与表格，右侧为属性和关联关系">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ReqIF Web Viewer｜在浏览器中阅读需求文件 · Clin">
+  <meta name="twitter:description" content="ReqIF Web Viewer 是开源的浏览器本地需求查看器，支持 ReqIF / ReqIFz 文档阅读、全文搜索、属性筛选、关联关系与附件。">
+  <meta name="twitter:image" content="https://xzeng666.github.io/assets/images/reqif-document-real.png">
+  <title>ReqIF Web Viewer｜在浏览器中阅读需求文件 · Clin</title>
+  <link rel="canonical" href="https://xzeng666.github.io/projects/reqif-web-viewer/">
+  <link rel="alternate" hreflang="zh-CN" href="https://xzeng666.github.io/projects/reqif-web-viewer/">
+  <link rel="alternate" hreflang="en" href="https://xzeng666.github.io/en/projects/reqif-web-viewer/">
+  <link rel="alternate" hreflang="x-default" href="https://xzeng666.github.io/en/projects/reqif-web-viewer/">
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <link rel="stylesheet" href="../../assets/css/themes.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script defer src="../../assets/js/locale.js"></script>
+  <script defer src="../../assets/js/site.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "ReqIF Web Viewer",
+      "url": "https://xzeng666.github.io/projects/reqif-web-viewer/",
+      "description": "ReqIF Web Viewer 是开源的浏览器本地需求查看器，支持 ReqIF / ReqIFz 文档阅读、全文搜索、属性筛选、关联关系与附件。",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web browser",
+      "programmingLanguage": "JavaScript",
+      "codeRepository": "https://github.com/Xzeng666/reqif-web-viewer",
+      "installUrl": "https://xzeng666.github.io/reqif-web-viewer/",
+      "license": "https://github.com/Xzeng666/reqif-web-viewer/blob/main/LICENSE",
+      "isAccessibleForFree": true,
+      "image": "https://xzeng666.github.io/assets/images/reqif-document-real.png",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Clin",
+        "url": "https://xzeng666.github.io/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "主页",
+          "item": "https://xzeng666.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "全部项目",
+          "item": "https://xzeng666.github.io/projects/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "ReqIF Web Viewer",
+          "item": "https://xzeng666.github.io/projects/reqif-web-viewer/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="project-theme theme-reqif">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="../../" aria-label="主页">
+        <span class="brand-mark" aria-hidden="true">RQ</span>
+        <span class="brand-text">ReqIF Web Viewer</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="展开导航" aria-expanded="false" aria-controls="site-nav">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <nav class="nav-links" id="site-nav" aria-label="项目导航">
+        <a href="../../">主页</a>
+        <a href="#background">背景</a>
+        <a href="#features">功能</a>
+        <a href="#start">开始使用</a>
+        <a href="../">全部项目</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="project-hero case-hero">
+      <div class="container project-hero-grid">
+        <div>
+          <span class="eyebrow">Open source · MIT</span>
+          <h1>ReqIF<br><span class="gradient-text">Web Viewer</span></h1>
+          <p class="hero-lead">打开本机的 ReqIF / ReqIFz 文件，按文档层级阅读需求，搜索正文、筛选属性并查看关联关系。文件解析和附件读取都在当前浏览器中完成。</p>
+          <div class="badge-row">
+            <span class="badge accent">ReqIF / ReqIFz</span>
+            <span class="badge">浏览器本地处理</span>
+            <span class="badge">支持离线使用</span>
+          </div>
+          <div class="button-row">
+            <a class="button button-primary" href="https://xzeng666.github.io/reqif-web-viewer/">立即使用</a>
+            <a class="button button-secondary" href="https://github.com/Xzeng666/reqif-web-viewer" target="_blank" rel="noopener noreferrer">查看源码</a>
+          </div>
+        </div>
+        <figure class="visual-frame reveal">
+          <a href="../../assets/images/reqif-document-real.png" target="_blank" rel="noopener noreferrer" aria-label="查看完整截图">
+            <img src="../../assets/images/reqif-document-real.png" width="1440" height="960" decoding="async" alt="ReqIF Web Viewer 实际文档视图，左侧为需求目录，中间为温度监测正文与表格，右侧为属性和关联关系">
+          </a>
+          <figcaption class="visual-caption">文档视图 · 目录、正文与属性面板，使用示例需求实际运行截图。</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="section section-muted" id="background">
+      <div class="container case-copy-grid">
+        <div class="case-copy reveal">
+          <span class="eyebrow">Background</span>
+          <h2>拿到需求文件，就能开始查阅。</h2>
+          <p>需求交换文件把章节、正文、属性与附件放在一起。评审时需要连续阅读，核对时又要通过 ID 或关键词快速找到某一条需求。</p>
+          <p>ReqIF Web Viewer 将文档阅读和工作项详情放在同一个网页中。通过浏览器选择文件即可开始，也能下载源码后打开 index.html 离线使用。</p>
+        </div>
+        <aside class="case-aside">
+          <article class="case-note reveal"><h3>文件留在当前浏览器</h3><p>网页资源由 GitHub Pages 提供。每位使用者选择自己的本机文件，各标签页独立处理。</p></article>
+          <article class="case-note reveal"><h3>围绕阅读与核对</h3><p>以只读方式查看导出内容，保留文件中的层级顺序，并提供需求属性和关联跳转。</p></article>
+        </aside>
+      </div>
+    </section>
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">Features</span><h2>从连续阅读到逐条核对。</h2></div>
+          <p>文档视图呈现需求上下文，工作项视图集中展示单条记录。</p>
+        </div>
+        <div class="detail-grid">
+          <article class="card reveal"><h3>文档与工作项双视图</h3><p>目录树与正文联动定位。文档视图支持段落、列表、表格，以及纯文本和富文本正文字段切换。</p></article>
+          <article class="card reveal"><h3>全文搜索与属性筛选</h3><p>搜索 ID、标题和正文，支持全部或任一关键词匹配。结果显示命中字段、高亮摘要和章节路径。</p></article>
+          <article class="card reveal"><h3>属性与关联关系</h3><p>查看枚举、日期、数值等属性，以及需求的出入向关联。点击关联条目可继续查看对应工作项。</p></article>
+          <article class="card reveal"><h3>ReqIFz 附件按需读取</h3><p>压缩包中的图片进入可见区域后加载，其他附件点击后读取和下载。正文阅读先于附件解压。</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section section-muted">
+      <div class="container project-feature">
+        <div class="feature-copy reveal">
+          <span class="eyebrow">Search &amp; inspect</span>
+          <h2>带着上下文找到目标需求。</h2>
+          <p>关键词与属性筛选可以组合使用。示例在搜索「温度」的同时筛选 High 优先级，并打开匹配工作项，核对阈值、恢复条件与关联需求。</p>
+        </div>
+        <figure class="visual-frame reveal">
+          <a href="../../assets/images/reqif-search-real.png" target="_blank" rel="noopener noreferrer" aria-label="查看完整截图">
+            <img src="../../assets/images/reqif-search-real.png" width="1440" height="960" loading="lazy" decoding="async" alt="ReqIF Web Viewer 实际搜索和工作项视图，温度关键词与 High 优先级筛选后展示正文、属性和关联关系">
+          </a>
+          <figcaption class="visual-caption">搜索与筛选 · 高亮命中内容，查看完整工作项；截图使用示例数据。</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="section" id="start">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">Get started</span><h2>选择文件，开始阅读。</h2></div>
+          <p>在线使用无需安装运行环境；关闭页面后，可再次选择本机文件继续查阅。</p>
+        </div>
+        <div class="card-grid">
+          <article class="card reveal"><h3>打开查看器</h3><p>进入在线工具，点击「打开文件」或将文件拖入页面。</p></article>
+          <article class="card reveal"><h3>选择 ReqIF 或 ReqIFz</h3><p>ReqIFz 包内应包含一个 ReqIF 主文件，可附带图片和其他附件。</p></article>
+          <article class="card reveal"><h3>阅读与定位</h3><p>使用目录、搜索、筛选或关联条目定位需求，并在两种视图间切换。</p></article>
+        </div>
+        <div class="button-row spaced-top">
+          <a class="button button-primary" href="https://xzeng666.github.io/reqif-web-viewer/">立即使用</a>
+        </div>
+      </div>
+    </section>
+    <section class="section section-muted">
+      <div class="container">
+        <div class="free-banner reveal">
+          <div class="free-banner-content">
+            <div><span class="free-label">MIT</span><h2>MIT 开源，源码可直接下载。</h2><p>项目使用 HTML、CSS 与 JavaScript，无需构建即可运行。仓库包含使用方式、格式说明与 GitHub Pages 部署步骤。</p></div>
+            <a class="button button-secondary" href="https://github.com/Xzeng666/reqif-web-viewer" target="_blank" rel="noopener noreferrer">浏览 GitHub 仓库</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <span>© <span data-year></span> Clin.</span>
+      <div class="footer-links">
+        <a href="../../">主页</a>
+        <a href="../">全部项目</a>
+        <a href="https://github.com/Xzeng666/reqif-web-viewer" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

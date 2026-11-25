@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en" data-language="en" data-language-counterpart="/projects/reqif-web-viewer/">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ReqIF Web Viewer is an open-source, browser-local viewer for ReqIF and ReqIFz files, with document navigation, full-text search, attribute filters, relations, and attachments.">
+  <meta name="theme-color" content="#08111f">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="ReqIF Web Viewer | Read requirements in your browser · Clin">
+  <meta property="og:description" content="ReqIF Web Viewer is an open-source, browser-local viewer for ReqIF and ReqIFz files, with document navigation, full-text search, attribute filters, relations, and attachments.">
+  <meta property="og:url" content="https://xzeng666.github.io/en/projects/reqif-web-viewer/">
+  <meta property="og:image" content="https://xzeng666.github.io/assets/images/reqif-document-real.png">
+  <meta property="og:image:alt" content="The running ReqIF Web Viewer showing a requirement tree, temperature monitoring text and table, and an attribute and relations panel">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ReqIF Web Viewer | Read requirements in your browser · Clin">
+  <meta name="twitter:description" content="ReqIF Web Viewer is an open-source, browser-local viewer for ReqIF and ReqIFz files, with document navigation, full-text search, attribute filters, relations, and attachments.">
+  <meta name="twitter:image" content="https://xzeng666.github.io/assets/images/reqif-document-real.png">
+  <title>ReqIF Web Viewer | Read requirements in your browser · Clin</title>
+  <link rel="canonical" href="https://xzeng666.github.io/en/projects/reqif-web-viewer/">
+  <link rel="alternate" hreflang="zh-CN" href="https://xzeng666.github.io/projects/reqif-web-viewer/">
+  <link rel="alternate" hreflang="en" href="https://xzeng666.github.io/en/projects/reqif-web-viewer/">
+  <link rel="alternate" hreflang="x-default" href="https://xzeng666.github.io/en/projects/reqif-web-viewer/">
+  <link rel="icon" href="../../../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../../assets/css/site.css">
+  <link rel="stylesheet" href="../../../assets/css/themes.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script defer src="../../../assets/js/locale.js"></script>
+  <script defer src="../../../assets/js/site.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "ReqIF Web Viewer",
+      "url": "https://xzeng666.github.io/en/projects/reqif-web-viewer/",
+      "description": "ReqIF Web Viewer is an open-source, browser-local viewer for ReqIF and ReqIFz files, with document navigation, full-text search, attribute filters, relations, and attachments.",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Web browser",
+      "programmingLanguage": "JavaScript",
+      "codeRepository": "https://github.com/Xzeng666/reqif-web-viewer",
+      "installUrl": "https://xzeng666.github.io/reqif-web-viewer/",
+      "license": "https://github.com/Xzeng666/reqif-web-viewer/blob/main/LICENSE",
+      "isAccessibleForFree": true,
+      "image": "https://xzeng666.github.io/assets/images/reqif-document-real.png",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Clin",
+        "url": "https://xzeng666.github.io/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://xzeng666.github.io/en/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "All projects",
+          "item": "https://xzeng666.github.io/en/projects/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "ReqIF Web Viewer",
+          "item": "https://xzeng666.github.io/en/projects/reqif-web-viewer/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body class="project-theme theme-reqif">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="../../" aria-label="Home">
+        <span class="brand-mark" aria-hidden="true">RQ</span>
+        <span class="brand-text">ReqIF Web Viewer</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <nav class="nav-links" id="site-nav" aria-label="Project navigation">
+        <a href="../../">Home</a>
+        <a href="#background">Background</a>
+        <a href="#features">Features</a>
+        <a href="#start">Get started</a>
+        <a href="../">All projects</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="project-hero case-hero">
+      <div class="container project-hero-grid">
+        <div>
+          <span class="eyebrow">Open source · MIT</span>
+          <h1>ReqIF<br><span class="gradient-text">Web Viewer</span></h1>
+          <p class="hero-lead">Open local ReqIF and ReqIFz files to read requirements in document order, search their content, filter attributes, and follow relations. Parsing and attachment access happen in the current browser.</p>
+          <div class="badge-row">
+            <span class="badge accent">ReqIF / ReqIFz</span>
+            <span class="badge">Browser-local processing</span>
+            <span class="badge">Offline use</span>
+          </div>
+          <div class="button-row">
+            <a class="button button-primary" href="https://xzeng666.github.io/reqif-web-viewer/">Open viewer</a>
+            <a class="button button-secondary" href="https://github.com/Xzeng666/reqif-web-viewer" target="_blank" rel="noopener noreferrer">View source</a>
+          </div>
+        </div>
+        <figure class="visual-frame reveal">
+          <a href="../../../assets/images/reqif-document-real.png" target="_blank" rel="noopener noreferrer" aria-label="View full screenshot">
+            <img src="../../../assets/images/reqif-document-real.png" width="1440" height="960" decoding="async" alt="The running ReqIF Web Viewer showing a requirement tree, temperature monitoring text and table, and an attribute and relations panel">
+          </a>
+          <figcaption class="visual-caption">Document view with navigation, content, and attributes. Captured from the running viewer with sample requirements.</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="section section-muted" id="background">
+      <div class="container case-copy-grid">
+        <div class="case-copy reveal">
+          <span class="eyebrow">Background</span>
+          <h2>Start reading as soon as the file arrives.</h2>
+          <p>Requirements exchange files contain chapters, content, attributes, and attachments. Reviews call for continuous reading, while verification often starts with an ID or a keyword.</p>
+          <p>ReqIF Web Viewer combines document reading and work item details in one web page. Select a local file to begin, or download the source and open index.html for offline use.</p>
+        </div>
+        <aside class="case-aside">
+          <article class="case-note reveal"><h3>Files stay in the current browser</h3><p>GitHub Pages serves the website assets. Each visitor selects a file on their own computer, and browser tabs process their files independently.</p></article>
+          <article class="case-note reveal"><h3>Built for reading and verification</h3><p>Browse exported content in read-only mode, keep its hierarchy and order, inspect attributes, and follow requirement relations.</p></article>
+        </aside>
+      </div>
+    </section>
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">Features</span><h2>Read the document, then inspect the details.</h2></div>
+          <p>Document view provides context. Work item view collects the details of a single record.</p>
+        </div>
+        <div class="detail-grid">
+          <article class="card reveal"><h3>Two connected views</h3><p>Navigate between the tree and document. Read paragraphs, lists, tables, and plain or rich text, with a choice of body field.</p></article>
+          <article class="card reveal"><h3>Search and attribute filters</h3><p>Search IDs, titles, and content using all or any keywords. Results include the matched field, highlighted excerpts, and chapter paths.</p></article>
+          <article class="card reveal"><h3>Attributes and relations</h3><p>Inspect enumeration, date, and numeric attributes, together with incoming and outgoing relations. Open related work items directly.</p></article>
+          <article class="card reveal"><h3>Attachments on demand</h3><p>Images in a ReqIFz archive load when visible. Other attachments are read and downloaded on click, so reading can start before attachment extraction.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section section-muted">
+      <div class="container project-feature">
+        <div class="feature-copy reveal">
+          <span class="eyebrow">Search &amp; inspect</span>
+          <h2>Find a requirement with its context.</h2>
+          <p>Combine keywords and attribute filters. This example searches for temperature and filters High priority before opening an item to inspect its thresholds, recovery conditions, and related requirements.</p>
+        </div>
+        <figure class="visual-frame reveal">
+          <a href="../../../assets/images/reqif-search-real.png" target="_blank" rel="noopener noreferrer" aria-label="View full screenshot">
+            <img src="../../../assets/images/reqif-search-real.png" width="1440" height="960" loading="lazy" decoding="async" alt="The running ReqIF Web Viewer with a temperature search, a High priority filter, and a work item showing attributes, text, and relations">
+          </a>
+          <figcaption class="visual-caption">Search and filters with highlighted results and full work item details. The interface is shown with illustrative Chinese requirements.</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="section" id="start">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">Get started</span><h2>Open the page, choose a file, and read.</h2></div>
+          <p>Online use requires no runtime installation. Select your local file again whenever you return to the viewer.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card reveal"><h3>Open the viewer</h3><p>Visit the tool and use Open file, or drag a file onto the page.</p></article>
+          <article class="card reveal"><h3>Select ReqIF or ReqIFz</h3><p>A ReqIFz archive should contain one ReqIF document and may include images and other attachments.</p></article>
+          <article class="card reveal"><h3>Read and navigate</h3><p>Use the tree, search, filters, or relations to locate a requirement and switch between the two views.</p></article>
+        </div>
+        <div class="button-row spaced-top">
+          <a class="button button-primary" href="https://xzeng666.github.io/reqif-web-viewer/">Open viewer</a>
+        </div>
+      </div>
+    </section>
+    <section class="section section-muted">
+      <div class="container">
+        <div class="free-banner reveal">
+          <div class="free-banner-content">
+            <div><span class="free-label">MIT</span><h2>MIT licensed, with source ready to download.</h2><p>Built with HTML, CSS, and JavaScript, the viewer runs without a build step. The repository includes usage, format notes, and GitHub Pages deployment instructions.</p></div>
+            <a class="button button-secondary" href="https://github.com/Xzeng666/reqif-web-viewer" target="_blank" rel="noopener noreferrer">Browse the GitHub repository</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container footer-grid">
+      <span>© <span data-year></span> Clin.</span>
+      <div class="footer-links">
+        <a href="../../">Home</a>
+        <a href="../">All projects</a>
+        <a href="https://github.com/Xzeng666/reqif-web-viewer" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

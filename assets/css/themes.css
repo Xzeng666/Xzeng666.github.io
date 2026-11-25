@@ -245,13 +245,13 @@
 .featured-project[data-project-theme] .project-highlight { border-left-color: var(--card-accent); background: rgba(var(--card-rgb), 0.08); }
 
 @media (min-width: 769px) {
-  .page-projects .projects-page-grid [data-project-theme="lanexam"] {
+  .page-projects .projects-page-grid [data-project-theme="reqif"] {
     min-height: 330px;
     grid-column: 1 / -1;
   }
 
-  .page-projects .projects-page-grid [data-project-theme="lanexam"] > p,
-  .page-projects .projects-page-grid [data-project-theme="lanexam"] .project-highlight {
+  .page-projects .projects-page-grid [data-project-theme="reqif"] > p,
+  .page-projects .projects-page-grid [data-project-theme="reqif"] .project-highlight {
     max-width: 760px;
   }
 }
@@ -666,4 +666,53 @@
   .page-home .portfolio-hero::before,
   .theme-racecar .case-hero::after,
   .theme-carmaker .case-hero::after { transform: none; }
+}
+
+[data-project-theme="reqif"] {
+  --card-accent: #60a5fa;
+  --card-accent-strong: #bfdbfe;
+  --card-rgb: 96, 165, 250;
+}
+
+.featured-project[data-project-theme="reqif"] .featured-project-media {
+  justify-content: center;
+}
+
+.featured-project[data-project-theme="reqif"] .featured-project-media img {
+  height: auto;
+  min-height: 0;
+  object-fit: contain;
+}
+
+.theme-reqif {
+  --primary: #60a5fa;
+  --primary-strong: #bfdbfe;
+  --accent: #34d399;
+  --accent-strong: #a7f3d0;
+  --theme-rgb: 96, 165, 250;
+  --theme-alt-rgb: 52, 211, 153;
+}
+
+.theme-reqif .project-hero-grid {
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 40px;
+}
+
+.theme-reqif .project-feature {
+  grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.35fr);
+  gap: 32px;
+}
+
+.theme-reqif .visual-frame { margin: 0; }
+.theme-reqif .case-note h3 { margin: 0; font-size: 18px; }
+.theme-reqif .case-note p, .theme-reqif .visual-caption { font-size: 14px; }
+.theme-reqif .badge { font-size: 14px; }
+.theme-reqif .case-hero h1 { overflow-wrap: anywhere; }
+
+@media (max-width: 1024px) {
+  .theme-reqif .project-hero-grid, .theme-reqif .project-feature { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .theme-reqif .detail-grid { grid-template-columns: 1fr; }
 }

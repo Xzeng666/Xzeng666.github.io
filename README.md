@@ -9,6 +9,7 @@
 - `/`：个人主页与精选项目。
 - `/en/`：英文个人主页与对应英文页面入口。
 - `/projects/`：全部项目与分类筛选。
+- `/projects/reqif-web-viewer/`：ReqIF Web Viewer 项目介绍、真实界面截图与在线使用入口。
 - `/projects/carmaker-camera-recorder/`：CarMaker CameraRSI Recorder 1.5.0 项目介绍、真实采集结果、双语界面与硬件编码说明。
 - `/lanexamsystem/`：LanExamSystem 项目介绍。
 - `/articles/`：技术文章入口。
@@ -31,7 +32,7 @@ python scripts/check_site.py
 
 ## 图片来源
 
-CarMaker CameraRSI Recorder 页面使用项目实际中英文 GUI 截图与录制结果；LanExamSystem 页面使用程序实际运行截图。图片仅用于说明对应项目的真实输出与界面。
+ReqIF Web Viewer 页面截图来自线上查看器实际运行，使用车辆状态监测示例需求。CarMaker CameraRSI Recorder 页面使用项目实际中英文 GUI 截图与录制结果；LanExamSystem 页面使用程序实际运行截图。图片仅用于说明对应项目的真实输出与界面。
 
 ## 部署
 

@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ReqIF Web Viewer 是开源的浏览器本地需求查看器，支持 ReqIF / ReqIFz 文档阅读、全文搜索、属性筛选、关联关系与附件。">
+  <meta name="description" content="ReqIF Web Viewer 是开源的本地需求查看器，支持 ReqIF / ReqIFz 文档阅读、正文搜索定位、字段设置、图片缩放、宽表格、关联关系和真实对象统计。">
   <meta name="theme-color" content="#08111f">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta property="og:type" content="article">
   <meta property="og:title" content="ReqIF Web Viewer｜在浏览器中阅读需求文件 · Clin">
-  <meta property="og:description" content="ReqIF Web Viewer 是开源的浏览器本地需求查看器，支持 ReqIF / ReqIFz 文档阅读、全文搜索、属性筛选、关联关系与附件。">
+  <meta property="og:description" content="ReqIF Web Viewer 是开源的本地需求查看器，支持 ReqIF / ReqIFz 文档阅读、正文搜索定位、字段设置、图片缩放、宽表格、关联关系和真实对象统计。">
   <meta property="og:url" content="https://xzeng666.github.io/projects/reqif-web-viewer/">
   <meta property="og:image" content="https://xzeng666.github.io/assets/images/reqif-document-real.png">
-  <meta property="og:image:alt" content="ReqIF Web Viewer 实际文档视图，左侧为需求目录，中间为温度监测正文与表格，右侧为属性和关联关系">
+  <meta property="og:image:alt" content="ReqIF Web Viewer 文档视图，展示需求目录、温度监测正文、属性和关联关系">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ReqIF Web Viewer｜在浏览器中阅读需求文件 · Clin">
-  <meta name="twitter:description" content="ReqIF Web Viewer 是开源的浏览器本地需求查看器，支持 ReqIF / ReqIFz 文档阅读、全文搜索、属性筛选、关联关系与附件。">
+  <meta name="twitter:description" content="ReqIF Web Viewer 是开源的本地需求查看器，支持 ReqIF / ReqIFz 文档阅读、正文搜索定位、字段设置、图片缩放、宽表格、关联关系和真实对象统计。">
   <meta name="twitter:image" content="https://xzeng666.github.io/assets/images/reqif-document-real.png">
   <title>ReqIF Web Viewer｜在浏览器中阅读需求文件 · Clin</title>
   <link rel="canonical" href="https://xzeng666.github.io/projects/reqif-web-viewer/">
@@ -35,7 +35,7 @@
       "@type": "SoftwareApplication",
       "name": "ReqIF Web Viewer",
       "url": "https://xzeng666.github.io/projects/reqif-web-viewer/",
-      "description": "ReqIF Web Viewer 是开源的浏览器本地需求查看器，支持 ReqIF / ReqIFz 文档阅读、全文搜索、属性筛选、关联关系与附件。",
+      "description": "ReqIF Web Viewer 是开源的本地需求查看器，支持 ReqIF / ReqIFz 文档阅读、正文搜索定位、字段设置、图片缩放、宽表格、关联关系和真实对象统计。",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Web browser",
       "programmingLanguage": "JavaScript",
@@ -95,7 +95,7 @@
       </button>
       <nav class="nav-links" id="site-nav" aria-label="项目导航">
         <a href="../../">主页</a>
-        <a href="#background">背景</a>
+        <a href="#interfaces">界面</a>
         <a href="#features">功能</a>
         <a href="#start">开始使用</a>
         <a href="../">全部项目</a>
@@ -121,9 +121,9 @@
         </div>
         <figure class="visual-frame reveal">
           <a href="../../assets/images/reqif-document-real.png" target="_blank" rel="noopener noreferrer" aria-label="查看完整截图">
-            <img src="../../assets/images/reqif-document-real.png" width="1440" height="960" decoding="async" alt="ReqIF Web Viewer 实际文档视图，左侧为需求目录，中间为温度监测正文与表格，右侧为属性和关联关系">
+            <img src="../../assets/images/reqif-document-real.png" width="1440" height="960" decoding="async" alt="ReqIF Web Viewer 文档视图，展示需求目录、温度监测正文、属性和关联关系">
           </a>
-          <figcaption class="visual-caption">文档视图 · 目录、正文与属性面板，使用示例需求实际运行截图。</figcaption>
+          <figcaption class="visual-caption">文档视图 · 按目录阅读需求，查看属性和关联。</figcaption>
         </figure>
       </div>
     </section>
@@ -144,29 +144,91 @@
     <section class="section" id="features">
       <div class="container">
         <div class="section-heading reveal">
-          <div><span class="eyebrow">Features</span><h2>从连续阅读到逐条核对。</h2></div>
-          <p>文档视图呈现需求上下文，工作项视图集中展示单条记录。</p>
+          <div><span class="eyebrow">Features</span><h2>查看器的常用操作。</h2></div>
+          <p>所有截图均来自当前版本实际运行，使用虚构的车辆监测需求。点击图片可查看原图。</p>
         </div>
         <div class="detail-grid">
-          <article class="card reveal"><h3>文档与工作项双视图</h3><p>目录树与正文联动定位。文档视图支持段落、列表、表格，以及纯文本和富文本正文字段切换。</p></article>
-          <article class="card reveal"><h3>全文搜索与属性筛选</h3><p>搜索 ID、标题和正文，支持全部或任一关键词匹配。结果显示命中字段、高亮摘要和章节路径。</p></article>
-          <article class="card reveal"><h3>属性与关联关系</h3><p>查看枚举、日期、数值等属性，以及需求的出入向关联。点击关联条目可继续查看对应工作项。</p></article>
-          <article class="card reveal"><h3>ReqIFz 附件按需读取</h3><p>压缩包中的图片进入可见区域后加载，其他附件点击后读取和下载。正文阅读先于附件解压。</p></article>
+          <article class="card reveal"><h3>文档与工作项</h3><p>按文件原有顺序连续阅读各规格，目录与正文联动。切换工作项视图核对单条记录，正文字段可手动选择。</p></article>
+          <article class="card reveal"><h3>搜索与正文定位</h3><p>搜索 ID、标题和内容，组合属性筛选。支持全部或任一关键词匹配，正文高亮、命中次数与上一处 / 下一处跳转。</p></article>
+          <article class="card reveal"><h3>字段显示设置</h3><p>打开工作项后，从右下角齿轮勾选字段，通过左侧手柄拖动或 ↑ / ↓ 按钮排序。显示偏好保存在当前浏览器。</p></article>
+          <article class="card reveal"><h3>属性值与来源</h3><p>区分多选枚举、布尔值、日期和数值，标注继承的默认值。日期保留源时区，悬停可查看原始内容。</p></article>
+          <article class="card reveal"><h3>图表与附件</h3><p>图片打开时适应窗口，可用底部图标或滚轮缩放、拖动平移。宽表格在正文中横向滚动，其他附件点击后下载。</p></article>
+          <article class="card reveal"><h3>关联与统计</h3><p>点击出入向关联继续查阅。统计按真实对象计算，重复引用只计一次，补充标题作为展示节点处理。</p></article>
         </div>
       </div>
     </section>
-    <section class="section section-muted">
+    <section class="section section-muted" id="search">
       <div class="container project-feature">
         <div class="feature-copy reveal">
           <span class="eyebrow">Search &amp; inspect</span>
-          <h2>带着上下文找到目标需求。</h2>
-          <p>关键词与属性筛选可以组合使用。示例在搜索「温度」的同时筛选 High 优先级，并打开匹配工作项，核对阈值、恢复条件与关联需求。</p>
+          <h2>从结果定位到正文中的具体内容。</h2>
+          <p>搜索「温度」并筛选 High 优先级后，结果显示命中字段、摘要和章节路径。打开条目后可查看正文高亮，再通过上一处 / 下一处继续定位。</p>
         </div>
         <figure class="visual-frame reveal">
           <a href="../../assets/images/reqif-search-real.png" target="_blank" rel="noopener noreferrer" aria-label="查看完整截图">
-            <img src="../../assets/images/reqif-search-real.png" width="1440" height="960" loading="lazy" decoding="async" alt="ReqIF Web Viewer 实际搜索和工作项视图，温度关键词与 High 优先级筛选后展示正文、属性和关联关系">
+            <img src="../../assets/images/reqif-search-real.png" width="1440" height="960" loading="lazy" decoding="async" alt="搜索温度并按 High 优先级筛选，正文显示高亮和命中计数，顶部提供上一处与下一处按钮">
           </a>
-          <figcaption class="visual-caption">搜索与筛选 · 高亮命中内容，查看完整工作项；截图使用示例数据。</figcaption>
+          <figcaption class="visual-caption">关键词与属性组合筛选 · 正文高亮和命中定位。</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="section" id="interfaces">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">Attributes</span><h2>按查阅习惯组织属性。</h2></div>
+          <p>保留原始字段名与值提示，常用显示设置放在工作项面板内。</p>
+        </div>
+        <div class="reqif-gallery">
+        <figure class="visual-frame reveal">
+          <a href="../../assets/images/reqif-item-real.png" target="_blank" rel="noopener noreferrer" aria-label="查看完整截图">
+            <img src="../../assets/images/reqif-item-real.png" width="1440" height="960" loading="lazy" decoding="async" alt="工作项视图展示多选枚举标签、默认值标记、保留时区的日期和需求正文">
+          </a>
+          <figcaption class="visual-caption">工作项详情 · 多选枚举、布尔值、默认值和源时区。</figcaption>
+        </figure>
+        <figure class="visual-frame reveal">
+          <a href="../../assets/images/reqif-attributes-real.png" target="_blank" rel="noopener noreferrer" aria-label="查看完整截图">
+            <img src="../../assets/images/reqif-attributes-real.png" width="1440" height="960" loading="lazy" decoding="async" alt="显示字段窗口展示勾选框、左侧拖动手柄和上移下移图标按钮">
+          </a>
+          <figcaption class="visual-caption">字段设置 · 勾选显示、拖动排序，或点击 ↑ / ↓ 调整。</figcaption>
+        </figure>
+        </div>
+      </div>
+    </section>
+    <section class="section section-muted" id="media">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">Images &amp; tables</span><h2>图片预览与宽表格。</h2></div>
+          <p>图片和设置窗口均可通过 × 或点击外部关闭，查阅操作集中在内容附近。</p>
+        </div>
+        <div class="reqif-gallery">
+        <figure class="visual-frame reveal">
+          <a href="../../assets/images/reqif-image-real.png" target="_blank" rel="noopener noreferrer" aria-label="查看完整截图">
+            <img src="../../assets/images/reqif-image-real.png" width="1440" height="960" loading="lazy" decoding="async" alt="图片预览自动适应窗口，右上角为关闭图标，底部为缩放图标与比例">
+          </a>
+          <figcaption class="visual-caption">图片预览 · 默认适应窗口，底部图标缩放，拖动查看细节。</figcaption>
+        </figure>
+        <figure class="visual-frame reveal">
+          <a href="../../assets/images/reqif-table-real.png" target="_blank" rel="noopener noreferrer" aria-label="查看完整截图">
+            <img src="../../assets/images/reqif-table-real.png" width="1440" height="960" loading="lazy" decoding="async" alt="文档视图中的十列表格，可在正文区域横向滚动查看其余列">
+          </a>
+          <figcaption class="visual-caption">宽表格 · 在正文内横向滚动，保持当前阅读上下文。</figcaption>
+        </figure>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="statistics">
+      <div class="container case-copy-grid">
+        <div class="case-copy reveal">
+          <span class="eyebrow">Statistics</span>
+          <h2>统计对应源文件中的真实对象。</h2>
+          <p>同一工作项被多个规格引用时只计一次。由规格名称补充的文档标题标记为展示节点，工作项与类型数量以源文件中的对象为准。</p>
+          <p>统计窗口同时列出规格、关联关系与附件数量。示例包含 16 个工作项，其中 Heading 5 个、Requirement 11 个。</p>
+        </div>
+        <figure class="visual-frame reveal reqif-statistics">
+          <a href="../../assets/images/reqif-statistics-real.png" target="_blank" rel="noopener noreferrer" aria-label="查看完整截图">
+            <img src="../../assets/images/reqif-statistics-real.png" width="420" height="314" loading="lazy" decoding="async" alt="统计窗口显示16个真实工作项、5个Heading、11个Requirement、2个规格、2个关联与3个附件">
+          </a>
+          <figcaption class="visual-caption">统计窗口 · 补充标题独立于工作项计数。</figcaption>
         </figure>
       </div>
     </section>
@@ -174,7 +236,7 @@
       <div class="container">
         <div class="section-heading reveal">
           <div><span class="eyebrow">Get started</span><h2>选择文件，开始阅读。</h2></div>
-          <p>在线使用无需安装运行环境；关闭页面后，可再次选择本机文件继续查阅。</p>
+          <p>在线使用无需安装运行环境，选择本机文件即可开始。</p>
         </div>
         <div class="card-grid">
           <article class="card reveal"><h3>打开查看器</h3><p>进入在线工具，点击「打开文件」或将文件拖入页面。</p></article>
@@ -190,7 +252,7 @@
       <div class="container">
         <div class="free-banner reveal">
           <div class="free-banner-content">
-            <div><span class="free-label">MIT</span><h2>MIT 开源，源码可直接下载。</h2><p>项目使用 HTML、CSS 与 JavaScript，无需构建即可运行。仓库包含使用方式、格式说明与 GitHub Pages 部署步骤。</p></div>
+            <div><span class="free-label">MIT</span><h2>MIT 开源，源码可直接下载。</h2><p>项目使用 HTML、CSS 与 JavaScript，无需构建即可运行。仓库包含源代码、使用方式与文件支持说明。</p></div>
             <a class="button button-secondary" href="https://github.com/Xzeng666/reqif-web-viewer" target="_blank" rel="noopener noreferrer">浏览 GitHub 仓库</a>
           </div>
         </div>

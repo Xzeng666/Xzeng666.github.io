@@ -716,3 +716,20 @@
 @media (max-width: 768px) {
   .theme-reqif .detail-grid { grid-template-columns: 1fr; }
 }
+
+.theme-reqif .reqif-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 24px;
+}
+
+.theme-reqif .reqif-statistics {
+  width: min(100%, 420px);
+  justify-self: center;
+  align-self: start;
+}
+
+@media (max-width: 768px) {
+  .theme-reqif .reqif-gallery { grid-template-columns: 1fr; }
+}

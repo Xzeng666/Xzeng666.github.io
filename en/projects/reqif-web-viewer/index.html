@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ReqIF Web Viewer is an open-source, browser-local viewer for ReqIF and ReqIFz files, with document navigation, full-text search, attribute filters, relations, and attachments.">
+  <meta name="description" content="ReqIF Web Viewer is an open-source local requirements viewer with document reading, body search navigation, field settings, image zoom, wide tables, relations, and source-based statistics.">
   <meta name="theme-color" content="#08111f">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta property="og:type" content="article">
   <meta property="og:title" content="ReqIF Web Viewer | Read requirements in your browser · Clin">
-  <meta property="og:description" content="ReqIF Web Viewer is an open-source, browser-local viewer for ReqIF and ReqIFz files, with document navigation, full-text search, attribute filters, relations, and attachments.">
+  <meta property="og:description" content="ReqIF Web Viewer is an open-source local requirements viewer with document reading, body search navigation, field settings, image zoom, wide tables, relations, and source-based statistics.">
   <meta property="og:url" content="https://xzeng666.github.io/en/projects/reqif-web-viewer/">
   <meta property="og:image" content="https://xzeng666.github.io/assets/images/reqif-document-real.png">
-  <meta property="og:image:alt" content="The running ReqIF Web Viewer showing a requirement tree, temperature monitoring text and table, and an attribute and relations panel">
+  <meta property="og:image:alt" content="ReqIF Web Viewer document view with a requirement tree, temperature monitoring content, attributes, and relations">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ReqIF Web Viewer | Read requirements in your browser · Clin">
-  <meta name="twitter:description" content="ReqIF Web Viewer is an open-source, browser-local viewer for ReqIF and ReqIFz files, with document navigation, full-text search, attribute filters, relations, and attachments.">
+  <meta name="twitter:description" content="ReqIF Web Viewer is an open-source local requirements viewer with document reading, body search navigation, field settings, image zoom, wide tables, relations, and source-based statistics.">
   <meta name="twitter:image" content="https://xzeng666.github.io/assets/images/reqif-document-real.png">
   <title>ReqIF Web Viewer | Read requirements in your browser · Clin</title>
   <link rel="canonical" href="https://xzeng666.github.io/en/projects/reqif-web-viewer/">
@@ -35,7 +35,7 @@
       "@type": "SoftwareApplication",
       "name": "ReqIF Web Viewer",
       "url": "https://xzeng666.github.io/en/projects/reqif-web-viewer/",
-      "description": "ReqIF Web Viewer is an open-source, browser-local viewer for ReqIF and ReqIFz files, with document navigation, full-text search, attribute filters, relations, and attachments.",
+      "description": "ReqIF Web Viewer is an open-source local requirements viewer with document reading, body search navigation, field settings, image zoom, wide tables, relations, and source-based statistics.",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Web browser",
       "programmingLanguage": "JavaScript",
@@ -95,7 +95,7 @@
       </button>
       <nav class="nav-links" id="site-nav" aria-label="Project navigation">
         <a href="../../">Home</a>
-        <a href="#background">Background</a>
+        <a href="#interfaces">Interface</a>
         <a href="#features">Features</a>
         <a href="#start">Get started</a>
         <a href="../">All projects</a>
@@ -121,9 +121,9 @@
         </div>
         <figure class="visual-frame reveal">
           <a href="../../../assets/images/reqif-document-real.png" target="_blank" rel="noopener noreferrer" aria-label="View full screenshot">
-            <img src="../../../assets/images/reqif-document-real.png" width="1440" height="960" decoding="async" alt="The running ReqIF Web Viewer showing a requirement tree, temperature monitoring text and table, and an attribute and relations panel">
+            <img src="../../../assets/images/reqif-document-real.png" width="1440" height="960" decoding="async" alt="ReqIF Web Viewer document view with a requirement tree, temperature monitoring content, attributes, and relations">
           </a>
-          <figcaption class="visual-caption">Document view with navigation, content, and attributes. Captured from the running viewer with sample requirements.</figcaption>
+          <figcaption class="visual-caption">Document view with requirement navigation, attributes, and relations.</figcaption>
         </figure>
       </div>
     </section>
@@ -144,29 +144,91 @@
     <section class="section" id="features">
       <div class="container">
         <div class="section-heading reveal">
-          <div><span class="eyebrow">Features</span><h2>Read the document, then inspect the details.</h2></div>
-          <p>Document view provides context. Work item view collects the details of a single record.</p>
+          <div><span class="eyebrow">Features</span><h2>Everyday operations for reading requirements.</h2></div>
+          <p>Screenshots show the current viewer with illustrative Chinese vehicle-monitoring requirements. Select an image to view it at full size.</p>
         </div>
         <div class="detail-grid">
-          <article class="card reveal"><h3>Two connected views</h3><p>Navigate between the tree and document. Read paragraphs, lists, tables, and plain or rich text, with a choice of body field.</p></article>
-          <article class="card reveal"><h3>Search and attribute filters</h3><p>Search IDs, titles, and content using all or any keywords. Results include the matched field, highlighted excerpts, and chapter paths.</p></article>
-          <article class="card reveal"><h3>Attributes and relations</h3><p>Inspect enumeration, date, and numeric attributes, together with incoming and outgoing relations. Open related work items directly.</p></article>
-          <article class="card reveal"><h3>Attachments on demand</h3><p>Images in a ReqIFz archive load when visible. Other attachments are read and downloaded on click, so reading can start before attachment extraction.</p></article>
+          <article class="card reveal"><h3>Document and work item views</h3><p>Read specifications continuously in their original order, navigate from the tree, and inspect individual records. Select the field used as the document body.</p></article>
+          <article class="card reveal"><h3>Search and body navigation</h3><p>Search IDs, titles, and content with all or any keywords, then combine attribute filters. Highlight body matches, see the count, and move to the previous or next occurrence.</p></article>
+          <article class="card reveal"><h3>Field display settings</h3><p>Open the gear in the work item panel to choose fields. Drag the left handle or click the up and down buttons to reorder them. Preferences stay in the current browser.</p></article>
+          <article class="card reveal"><h3>Attribute values and sources</h3><p>Inspect separate enumeration labels, booleans, dates, and numbers. Inherited defaults are marked, dates retain their source time zone, and tooltips show the original value.</p></article>
+          <article class="card reveal"><h3>Images, tables, and attachments</h3><p>Images open fitted to the window, with zoom controls, wheel zoom, and drag panning. Scroll wide tables within the document and download other attachments on click.</p></article>
+          <article class="card reveal"><h3>Relations and statistics</h3><p>Follow incoming and outgoing relations. Counts use the source objects, count repeated references once, and handle added document titles as display nodes.</p></article>
         </div>
       </div>
     </section>
-    <section class="section section-muted">
+    <section class="section section-muted" id="search">
       <div class="container project-feature">
         <div class="feature-copy reveal">
           <span class="eyebrow">Search &amp; inspect</span>
-          <h2>Find a requirement with its context.</h2>
-          <p>Combine keywords and attribute filters. This example searches for temperature and filters High priority before opening an item to inspect its thresholds, recovery conditions, and related requirements.</p>
+          <h2>Go from a result to the matching content.</h2>
+          <p>This example searches for temperature and filters High priority. Results show the matched field, excerpt, and chapter path. Open an item to see highlighted body matches, then move to the previous or next occurrence.</p>
         </div>
         <figure class="visual-frame reveal">
           <a href="../../../assets/images/reqif-search-real.png" target="_blank" rel="noopener noreferrer" aria-label="View full screenshot">
-            <img src="../../../assets/images/reqif-search-real.png" width="1440" height="960" loading="lazy" decoding="async" alt="The running ReqIF Web Viewer with a temperature search, a High priority filter, and a work item showing attributes, text, and relations">
+            <img src="../../../assets/images/reqif-search-real.png" width="1440" height="960" loading="lazy" decoding="async" alt="Temperature search with a High priority filter, highlighted body text, occurrence count, and previous and next controls">
           </a>
-          <figcaption class="visual-caption">Search and filters with highlighted results and full work item details. The interface is shown with illustrative Chinese requirements.</figcaption>
+          <figcaption class="visual-caption">Combined search and filters with body highlighting and occurrence navigation.</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="section" id="interfaces">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">Attributes</span><h2>Arrange attributes for the way you read.</h2></div>
+          <p>Original field names and value tooltips remain available, with display settings inside the work item panel.</p>
+        </div>
+        <div class="reqif-gallery">
+        <figure class="visual-frame reveal">
+          <a href="../../../assets/images/reqif-item-real.png" target="_blank" rel="noopener noreferrer" aria-label="View full screenshot">
+            <img src="../../../assets/images/reqif-item-real.png" width="1440" height="960" loading="lazy" decoding="async" alt="Work item details showing enumeration labels, inherited defaults, a date retaining its time zone, and the body">
+          </a>
+          <figcaption class="visual-caption">Work item details with enumeration values, booleans, defaults, and the source time zone.</figcaption>
+        </figure>
+        <figure class="visual-frame reveal">
+          <a href="../../../assets/images/reqif-attributes-real.png" target="_blank" rel="noopener noreferrer" aria-label="View full screenshot">
+            <img src="../../../assets/images/reqif-attributes-real.png" width="1440" height="960" loading="lazy" decoding="async" alt="Field settings with checkboxes, drag handles on the left, and up and down icon buttons">
+          </a>
+          <figcaption class="visual-caption">Choose visible fields and reorder them by dragging or clicking the up and down buttons.</figcaption>
+        </figure>
+        </div>
+      </div>
+    </section>
+    <section class="section section-muted" id="media">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="eyebrow">Images &amp; tables</span><h2>Inspect diagrams and wide tables.</h2></div>
+          <p>Close image and settings windows with the cross or a click outside. Reading controls stay close to the content.</p>
+        </div>
+        <div class="reqif-gallery">
+        <figure class="visual-frame reveal">
+          <a href="../../../assets/images/reqif-image-real.png" target="_blank" rel="noopener noreferrer" aria-label="View full screenshot">
+            <img src="../../../assets/images/reqif-image-real.png" width="1440" height="960" loading="lazy" decoding="async" alt="Image preview fitted to the window, with a close icon at the top and zoom icons and a percentage below">
+          </a>
+          <figcaption class="visual-caption">Image preview starts fitted to the window, with zoom controls and drag panning.</figcaption>
+        </figure>
+        <figure class="visual-frame reveal">
+          <a href="../../../assets/images/reqif-table-real.png" target="_blank" rel="noopener noreferrer" aria-label="View full screenshot">
+            <img src="../../../assets/images/reqif-table-real.png" width="1440" height="960" loading="lazy" decoding="async" alt="A ten-column requirement table scrolled horizontally within document view">
+          </a>
+          <figcaption class="visual-caption">Scroll wide tables inside the document while keeping their surrounding context.</figcaption>
+        </figure>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="statistics">
+      <div class="container case-copy-grid">
+        <div class="case-copy reveal">
+          <span class="eyebrow">Statistics</span>
+          <h2>Statistics reflect the source objects.</h2>
+          <p>A work item referenced by multiple specifications is counted once. Document titles added from specification names are marked as display nodes, while work item and type totals use objects from the file.</p>
+          <p>The window also lists specifications, relations, and attachments. This example contains 16 work items, including 5 Heading and 11 Requirement objects.</p>
+        </div>
+        <figure class="visual-frame reveal reqif-statistics">
+          <a href="../../../assets/images/reqif-statistics-real.png" target="_blank" rel="noopener noreferrer" aria-label="View full screenshot">
+            <img src="../../../assets/images/reqif-statistics-real.png" width="420" height="314" loading="lazy" decoding="async" alt="Statistics window showing 16 source work items, 5 Heading and 11 Requirement objects, 2 specifications, 2 relations, and 3 attachments">
+          </a>
+          <figcaption class="visual-caption">Statistics count source work items separately from added document titles.</figcaption>
         </figure>
       </div>
     </section>
@@ -190,7 +252,7 @@
       <div class="container">
         <div class="free-banner reveal">
           <div class="free-banner-content">
-            <div><span class="free-label">MIT</span><h2>MIT licensed, with source ready to download.</h2><p>Built with HTML, CSS, and JavaScript, the viewer runs without a build step. The repository includes usage, format notes, and GitHub Pages deployment instructions.</p></div>
+            <div><span class="free-label">MIT</span><h2>MIT licensed, with source ready to download.</h2><p>Built with HTML, CSS, and JavaScript, the viewer runs without a build step. The repository includes the source, usage, and supported file formats.</p></div>
             <a class="button button-secondary" href="https://github.com/Xzeng666/reqif-web-viewer" target="_blank" rel="noopener noreferrer">Browse the GitHub repository</a>
           </div>
         </div>

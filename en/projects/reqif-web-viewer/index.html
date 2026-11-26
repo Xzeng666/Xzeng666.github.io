@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ReqIF Web Viewer is an open-source local requirements viewer with document reading, body search navigation, field settings, image zoom, wide tables, relations, and source-based statistics.">
+  <meta name="description" content="Read, search, and compare local ReqIF and ReqIFz files in your browser. Export differences as CSV or an offline HTML report.">
   <meta name="theme-color" content="#08111f">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta property="og:type" content="article">
   <meta property="og:title" content="ReqIF Web Viewer | Read requirements in your browser · Clin">
-  <meta property="og:description" content="ReqIF Web Viewer is an open-source local requirements viewer with document reading, body search navigation, field settings, image zoom, wide tables, relations, and source-based statistics.">
+  <meta property="og:description" content="Read, search, and compare local ReqIF and ReqIFz files in your browser. Export differences as CSV or an offline HTML report.">
   <meta property="og:url" content="https://xzeng666.github.io/en/projects/reqif-web-viewer/">
   <meta property="og:image" content="https://xzeng666.github.io/assets/images/reqif-document-real.png">
   <meta property="og:image:alt" content="ReqIF Web Viewer document view with a requirement tree, temperature monitoring content, attributes, and relations">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ReqIF Web Viewer | Read requirements in your browser · Clin">
-  <meta name="twitter:description" content="ReqIF Web Viewer is an open-source local requirements viewer with document reading, body search navigation, field settings, image zoom, wide tables, relations, and source-based statistics.">
+  <meta name="twitter:description" content="Read, search, and compare local ReqIF and ReqIFz files in your browser. Export differences as CSV or an offline HTML report.">
   <meta name="twitter:image" content="https://xzeng666.github.io/assets/images/reqif-document-real.png">
   <title>ReqIF Web Viewer | Read requirements in your browser · Clin</title>
   <link rel="canonical" href="https://xzeng666.github.io/en/projects/reqif-web-viewer/">
@@ -35,7 +35,7 @@
       "@type": "SoftwareApplication",
       "name": "ReqIF Web Viewer",
       "url": "https://xzeng666.github.io/en/projects/reqif-web-viewer/",
-      "description": "ReqIF Web Viewer is an open-source local requirements viewer with document reading, body search navigation, field settings, image zoom, wide tables, relations, and source-based statistics.",
+      "description": "Read, search, and compare local ReqIF and ReqIFz files in your browser. Export differences as CSV or an offline HTML report.",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Web browser",
       "programmingLanguage": "JavaScript",
@@ -96,6 +96,7 @@
       <nav class="nav-links" id="site-nav" aria-label="Project navigation">
         <a href="../../">Home</a>
         <a href="#interfaces">Interface</a>
+        <a href="#comparison">Compare versions</a>
         <a href="#features">Features</a>
         <a href="#start">Get started</a>
         <a href="../">All projects</a>
@@ -108,7 +109,7 @@
         <div>
           <span class="eyebrow">Open source · MIT</span>
           <h1>ReqIF<br><span class="gradient-text">Web Viewer</span></h1>
-          <p class="hero-lead">Open local ReqIF and ReqIFz files to read requirements in document order, search their content, filter attributes, and follow relations. Parsing and attachment access happen in the current browser.</p>
+          <p class="hero-lead">Read and search requirements in local ReqIF and ReqIFz files, or compare two versions. Your files stay in your browser.</p>
           <div class="badge-row">
             <span class="badge accent">ReqIF / ReqIFz</span>
             <span class="badge">Browser-local processing</span>
@@ -144,17 +145,38 @@
     <section class="section" id="features">
       <div class="container">
         <div class="section-heading reveal">
-          <div><span class="eyebrow">Features</span><h2>Everyday operations for reading requirements.</h2></div>
+          <div><span class="eyebrow">Features</span><h2>Read, search, compare</h2></div>
           <p>Screenshots show the current viewer with illustrative Chinese vehicle-monitoring requirements. Select an image to view it at full size.</p>
         </div>
         <div class="detail-grid">
           <article class="card reveal"><h3>Document and work item views</h3><p>Read specifications continuously in their original order, navigate from the tree, and inspect individual records. Select the field used as the document body.</p></article>
           <article class="card reveal"><h3>Search and body navigation</h3><p>Search IDs, titles, and content with all or any keywords, then combine attribute filters. Highlight body matches, see the count, and move to the previous or next occurrence.</p></article>
-          <article class="card reveal"><h3>Field display settings</h3><p>Open the gear in the work item panel to choose fields. Drag the left handle or click the up and down buttons to reorder them. Preferences stay in the current browser.</p></article>
-          <article class="card reveal"><h3>Attribute values and sources</h3><p>Inspect separate enumeration labels, booleans, dates, and numbers. Inherited defaults are marked, dates retain their source time zone, and tooltips show the original value.</p></article>
+          <article class="card reveal"><h3>Field display settings</h3><p>Use the gear in the work item panel to choose and reorder fields. Attribute tables mark inherited defaults and preserve source time zones.</p></article>
+          <article class="card reveal"><h3>Version comparison</h3><p>Filter additions, older-only items, edits, and moves. Compare values side by side and export a CSV or an offline HTML report.</p></article>
           <article class="card reveal"><h3>Images, tables, and attachments</h3><p>Images open fitted to the window, with zoom controls, wheel zoom, and drag panning. Scroll wide tables within the document and download other attachments on click.</p></article>
           <article class="card reveal"><h3>Relations and statistics</h3><p>Follow incoming and outgoing relations. Counts use the source objects, count repeated references once, and handle added document titles as display nodes.</p></article>
         </div>
+      </div>
+    </section>
+    <section class="section section-muted" id="comparison">
+      <div class="container project-feature">
+        <div class="feature-copy reveal">
+          <span class="eyebrow">Version comparison</span>
+          <h2>Review version changes</h2>
+          <p>Select an older and a newer file, then filter by status. Open an item to compare its text, attributes, and position. Export CSV or HTML from the bottom-right menu.</p>
+          <figure class="visual-frame">
+            <a href="../../../assets/images/reqif-compare-picker-real.png" target="_blank" rel="noopener noreferrer" aria-label="View full version selection screenshot">
+              <img src="../../../assets/images/reqif-compare-picker-real.png" width="720" height="316" loading="lazy" decoding="async" alt="The file picker has an older ReqIFz file on the left, a newer one on the right, and a centered start button">
+            </a>
+            <figcaption class="visual-caption">The older file goes on the left and the newer file on the right.</figcaption>
+          </figure>
+        </div>
+        <figure class="visual-frame reveal">
+          <a href="../../../assets/images/reqif-comparison-real.png" target="_blank" rel="noopener noreferrer" aria-label="View full comparison screenshot">
+            <img src="../../../assets/images/reqif-comparison-real.png" width="1440" height="960" loading="lazy" decoding="async" alt="The comparison highlights a change from 85 °C to 90 °C in the body and attributes, with status filters and export options below">
+          </a>
+          <figcaption class="visual-caption">The alarm threshold changes from 85 °C to 90 °C.</figcaption>
+        </figure>
       </div>
     </section>
     <section class="section section-muted" id="search">
@@ -162,11 +184,11 @@
         <div class="feature-copy reveal">
           <span class="eyebrow">Search &amp; inspect</span>
           <h2>Go from a result to the matching content.</h2>
-          <p>This example searches for temperature and filters High priority. Results show the matched field, excerpt, and chapter path. Open an item to see highlighted body matches, then move to the previous or next occurrence.</p>
+          <p>This example searches for temperature and filters for High or Normal priority. Results show the matched field, excerpt, and chapter path. Open an item to step through matches in the body.</p>
         </div>
         <figure class="visual-frame reveal">
           <a href="../../../assets/images/reqif-search-real.png" target="_blank" rel="noopener noreferrer" aria-label="View full screenshot">
-            <img src="../../../assets/images/reqif-search-real.png" width="1440" height="960" loading="lazy" decoding="async" alt="Temperature search with a High priority filter, highlighted body text, occurrence count, and previous and next controls">
+            <img src="../../../assets/images/reqif-search-real.png" width="1440" height="960" loading="lazy" decoding="async" alt="Temperature search with High or Normal priority selected, highlighted body matches, and a match count">
           </a>
           <figcaption class="visual-caption">Combined search and filters with body highlighting and occurrence navigation.</figcaption>
         </figure>

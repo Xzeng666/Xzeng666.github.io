@@ -32,7 +32,7 @@ python scripts/check_site.py
 
 ## 图片来源
 
-ReqIF Web Viewer 页面使用当前线上版本的七张实际界面截图，覆盖文档、搜索定位、工作项、字段设置、图片、表格和统计，内容为车辆状态监测示例需求。CarMaker CameraRSI Recorder 页面使用项目实际中英文 GUI 截图与录制结果；LanExamSystem 页面使用程序实际运行截图。图片仅用于说明对应项目的真实输出与界面。
+ReqIF Web Viewer 页面使用车辆状态监测样例截图，包含阅读、搜索和版本对比。CarMaker CameraRSI Recorder 与 LanExamSystem 页面展示各自的实际界面和运行结果。
 
 ## 部署
 
